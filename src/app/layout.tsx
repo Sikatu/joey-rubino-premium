@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description:
     "Joey Rubino offers discreet sober companioning, fitness coaching, and transformational guidance. A grounded approach to recovery, accountability, and meaningful change.",
-  metadataBase: new URL("https://joeyrubino.com"),
+  metadataBase: new URL("https://joeyrubinorehab.com"),
   openGraph: {
     type: "website",
     locale: "en_US",

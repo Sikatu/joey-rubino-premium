@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://joeyrubino.com/sitemap.xml",
+    sitemap: "https://joeyrubinorehab.com/sitemap.xml",
   };
 }
