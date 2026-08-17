@@ -58,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       {/* 01 - HERO */}
-      <section className="relative flex h-[100svh] min-h-[720px] items-end overflow-hidden bg-ink text-ivory">
+      <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink text-ivory">
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden="true"
@@ -74,26 +74,26 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-ivory/[0.055] lg:block" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 lg:px-12 lg:pb-20 xl:px-16">
-          <div className="grid grid-cols-1 gap-16 lg:-translate-y-16 lg:grid-cols-12 lg:items-end">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 pt-24 sm:px-6 sm:pb-14 sm:pt-32 lg:px-12 lg:pb-20 lg:pt-36 xl:px-16">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:-translate-y-16 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-8 xl:-translate-x-16">
               <RevealSection>
-                <p className="mb-7 font-sans text-[10px] tracking-[0.28em] uppercase text-bronze-soft sm:text-[11px]">
+                <p className="mb-6 max-w-[18rem] font-sans text-[9px] leading-[1.7] tracking-[0.2em] uppercase text-bronze-soft sm:mb-7 sm:max-w-none sm:text-[10px] sm:tracking-[0.24em] lg:text-[11px]">
                   Los Angeles &middot; Sober Companioning &middot; Recovery Support
                 </p>
               </RevealSection>
 
               <RevealSection delay={1}>
-                <h1 className="font-serif text-[clamp(3.75rem,9vw,8.75rem)] leading-[0.86] tracking-[-0.045em] text-ivory lg:text-[clamp(5.5rem,7.35vw,8rem)] lg:leading-[0.87]">
-                  <span className="block lg:whitespace-nowrap">
+                <h1 className="font-serif text-[clamp(2.7rem,13.5vw,4.75rem)] leading-[0.88] tracking-[-0.04em] text-ivory sm:text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,7.35vw,8rem)] lg:leading-[0.87] lg:tracking-[-0.045em]">
+                  <span className="block whitespace-nowrap">
                     Find Healing.
                   </span>
 
-                  <span className="block text-ivory/72 lg:whitespace-nowrap">
+                  <span className="block whitespace-nowrap text-ivory/72">
                     Find Hope.
                   </span>
 
-                  <span className="block lg:whitespace-nowrap">
+                  <span className="block whitespace-nowrap">
                     Find Meaning.
                   </span>
                 </h1>
@@ -109,30 +109,50 @@ export default function HomePage() {
                     navigating change.
                   </p>
 
-                  <div className="mt-9 flex max-w-md flex-col gap-3">
-                    <Button
-                      href="/contact"
-                      variant="secondary"
-                      className="min-h-[58px] w-full"
-                    >
-                      Start a Private Conversation
-                    </Button>
+                  <div className="mt-7 flex max-w-md flex-col gap-3 sm:mt-9">
+                    <div className="sm:hidden">
+                      <Button
+                        href="/contact"
+                        variant="secondary"
+                        className="min-h-[58px] w-full"
+                        style={{
+                          paddingInline: "1rem",
+                          fontSize: "0.625rem",
+                          letterSpacing: "0.12em",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Start a Private Conversation
+                      </Button>
+                    </div>
 
-                    <Button
-                      href="/about"
-                      variant="outline"
-                      className="lux-button--dark-outline min-h-[52px] w-full opacity-90 transition-opacity hover:opacity-100"
-                    >
-                      Meet Joey
-                    </Button>
+                    <div className="hidden sm:block">
+                      <Button
+                        href="/contact"
+                        variant="secondary"
+                        className="min-h-[58px] w-full"
+                      >
+                        Start a Private Conversation
+                      </Button>
+                    </div>
+
+                    <div className="hidden sm:block">
+                      <Button
+                        href="/about"
+                        variant="outline"
+                        className="lux-button--dark-outline min-h-[52px] w-full opacity-90 transition-opacity hover:opacity-100"
+                      >
+                        Meet Joey
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </RevealSection>
             </div>
           </div>
 
-          <div className="mt-16 flex items-end justify-between border-t border-ivory/15 pt-5 lg:mt-20">
-            <p className="font-sans text-[9px] tracking-[0.22em] uppercase text-ivory/60 sm:text-[10px]">
+          <div className="mt-10 hidden items-end justify-between gap-5 border-t border-ivory/15 pt-4 sm:mt-14 sm:flex sm:pt-5 lg:mt-20">
+            <p className="max-w-[11rem] font-sans text-[9px] leading-[1.65] tracking-[0.16em] uppercase text-ivory/70 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
               Personal &middot; Discreet &middot; Grounded
             </p>
 
@@ -162,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* 02 - SERVICES */}
-      <section className="bg-ink py-20 text-ivory lg:py-28">
+      <section className="border-t border-ivory/10 bg-ink py-20 text-ivory sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <RevealSection>
             <div className="mb-10 grid gap-7 border-b border-ivory/15 pb-9 lg:grid-cols-12 lg:items-end">
@@ -246,7 +266,7 @@ export default function HomePage() {
       </section>
 
       {/* 03 - WHY JOEY */}
-      <section className="bg-ivory py-24 lg:py-36">
+      <section className="bg-ivory py-20 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-5">
@@ -329,7 +349,7 @@ export default function HomePage() {
                         {label}
                       </p>
 
-                      <p className="mt-3 font-serif text-[1.3rem] leading-[1.1] text-ink">
+                      <p className="mt-3 font-serif text-[1.2rem] leading-[1.1] text-ink sm:text-[1.05rem] lg:text-[1.3rem]">
                         {value}
                       </p>
                     </div>
@@ -348,7 +368,7 @@ export default function HomePage() {
       </section>
 
       {/* 04 - HOW SUPPORT WORKS */}
-      <section className="bg-alabaster py-24 lg:py-32">
+      <section className="bg-alabaster py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
@@ -417,7 +437,7 @@ export default function HomePage() {
       </section>
 
       {/* 05 - FINDING MEANING */}
-      <section className="overflow-hidden bg-olive py-24 text-ivory lg:py-32">
+      <section className="overflow-hidden bg-olive py-20 text-ivory sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-8">
@@ -467,7 +487,23 @@ export default function HomePage() {
             ].map((item, index) => (
               <div
                 key={item}
-                className="border-b border-ivory/15 px-5 py-8 first:pl-0 last:pr-0 md:border-b-0 md:border-r md:px-7 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                className={`px-4 py-8 sm:px-5 md:border-r md:border-ivory/15 md:px-7 md:py-9 ${
+                  index < 2
+                    ? "border-b border-ivory/15 md:border-b-0"
+                    : ""
+                } ${
+                  index % 2 === 0
+                    ? "border-r border-ivory/15"
+                    : ""
+                } ${
+                  index === 0
+                    ? "pl-0"
+                    : ""
+                } ${
+                  index === 3
+                    ? "pr-0 md:border-r-0"
+                    : ""
+                }`}
               >
                 <p className="mb-4 font-sans text-[10px] tracking-[0.18em] text-bronze-soft">
                   0{index + 1}
@@ -483,7 +519,7 @@ export default function HomePage() {
       </section>
 
       {/* 06 - FAQ */}
-      <section className="bg-ivory py-24 lg:py-32">
+      <section className="bg-ivory py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
