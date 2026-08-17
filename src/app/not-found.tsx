@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className="flex min-h-[72vh] items-center bg-ink pb-20 pt-32 text-ivory lg:pt-40">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-20">
         <p className="mb-6 font-sans text-[10px] tracking-[0.25em] uppercase text-bronze-soft">
-          404 Â· Page Not Found
+          404 / Page Not Found
         </p>
 
         <h1 className="max-w-4xl font-serif text-[clamp(3.25rem,8vw,7rem)] leading-[0.94] tracking-[-0.04em]">
