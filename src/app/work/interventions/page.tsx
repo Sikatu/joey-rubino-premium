@@ -211,10 +211,10 @@ export default function InterventionsPage() {
               <RevealSection delay={1}>
                 <div className="space-y-7 border-t border-ivory/15 pt-7 font-sans text-[14px] leading-[1.9] text-ivory/68">
                   <p>
-                    Joey&apos;s background includes certification in
-                    Interventions. His approach emphasizes clarity, connection,
-                    and creating space for a person to see that another direction
-                    may be possible.
+                    Joey&apos;s background includes training in interventions.
+                    His approach emphasizes clarity, connection, and creating
+                    space for a person to see that another direction may be
+                    possible.
                   </p>
 
                   <p>
