@@ -1,17 +1,64 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/Button";
-import { SectionHeading } from "@/components/SectionHeading";
+
 import { Accordion } from "@/components/Accordion";
+import { Button } from "@/components/Button";
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
+
+const services = [
+  {
+    number: "01",
+    eyebrow: "Recovery Support",
+    title: "Sober Companioning",
+    description:
+      "Real-world presence, structure, and accountability for people navigating recovery, transition, travel, and the return to everyday life.",
+    href: "/work/sober-companioning",
+  },
+  {
+    number: "02",
+    eyebrow: "Movement & Structure",
+    title: "Fitness & Transformation",
+    description:
+      "Movement, consistency, and practical structure brought together as tools for sustainable personal change.",
+    href: "/work/fitness",
+  },
+  {
+    number: "03",
+    eyebrow: "Conversation & Clarity",
+    title: "Interventions",
+    description:
+      "Structured and compassionate conversations intended to create clarity and help open a path toward recovery.",
+    href: "/work/interventions",
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Start privately",
+    description:
+      "Begin with a private conversation about what is happening, what feels urgent, and what kind of support may be useful.",
+  },
+  {
+    number: "02",
+    title: "Understand the need",
+    description:
+      "Clarify the circumstances, goals, environment, and level of support that may be appropriate.",
+  },
+  {
+    number: "03",
+    title: "Create the next step",
+    description:
+      "If working together makes sense, establish a practical direction for support, structure, accountability, or recovery.",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
       {/* 01 - HERO */}
-      <section className="relative flex min-h-[720px] h-[100svh] items-end overflow-hidden bg-ink text-ivory">
-        {/* Atmospheric background — intentionally image-free */}
+      <section className="relative flex h-[100svh] min-h-[720px] items-end overflow-hidden bg-ink text-ivory">
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden="true"
@@ -25,8 +72,6 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-[8%] top-0 hidden w-px bg-ivory/[0.055] lg:block" />
 
           <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-ivory/[0.055] lg:block" />
-
-
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 lg:px-12 lg:pb-20 xl:px-16">
@@ -34,7 +79,7 @@ export default function HomePage() {
             <div className="lg:col-span-8 xl:-translate-x-16">
               <RevealSection>
                 <p className="mb-7 font-sans text-[10px] tracking-[0.28em] uppercase text-bronze-soft sm:text-[11px]">
-                  Los Angeles · Sober Companioning · Recovery Support
+                  Los Angeles &middot; Sober Companioning &middot; Recovery Support
                 </p>
               </RevealSection>
 
@@ -57,9 +102,11 @@ export default function HomePage() {
 
             <div className="lg:col-span-4 lg:col-start-9 lg:self-center xl:translate-x-6">
               <RevealSection delay={2}>
-                <div className="max-w-md border-t border-ivory/20 pt-7">
-                  <p className="max-w-md font-sans text-[14px] leading-[1.8] text-ivory/68">
-                    Private sober companioning, interventions, fitness coaching, and recovery support for individuals and families navigating change.
+                <div className="max-w-md border-t border-ivory/25 pt-7">
+                  <p className="max-w-md font-sans text-[14px] leading-[1.8] text-ivory/72">
+                    Private sober companioning, interventions, fitness coaching,
+                    and recovery support for individuals and families
+                    navigating change.
                   </p>
 
                   <div className="mt-9 flex max-w-md flex-col gap-3">
@@ -74,7 +121,7 @@ export default function HomePage() {
                     <Button
                       href="/about"
                       variant="outline"
-                      className="lux-button--dark-outline min-h-[52px] w-full opacity-80 transition-opacity hover:opacity-100"
+                      className="lux-button--dark-outline min-h-[52px] w-full opacity-90 transition-opacity hover:opacity-100"
                     >
                       Meet Joey
                     </Button>
@@ -84,17 +131,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-16 flex items-end justify-between border-t border-ivory/10 pt-5 lg:mt-20">
-            <p className="font-sans text-[9px] tracking-[0.22em] uppercase text-ivory/35 sm:text-[10px]">
-              Los Angeles
+          <div className="mt-16 flex items-end justify-between border-t border-ivory/15 pt-5 lg:mt-20">
+            <p className="font-sans text-[9px] tracking-[0.22em] uppercase text-ivory/60 sm:text-[10px]">
+              Personal &middot; Discreet &middot; Grounded
             </p>
 
             <div
-              className="flex items-center gap-3 font-sans text-[9px] tracking-[0.22em] uppercase text-ivory/35 sm:text-[10px]"
+              className="flex items-center gap-3 font-sans text-[9px] tracking-[0.22em] uppercase text-ivory/60 sm:text-[10px]"
               aria-hidden="true"
             >
               <span>Explore</span>
-              <span className="h-7 w-px bg-ivory/20" />
+              <span className="h-7 w-px bg-ivory/25" />
+
               <svg
                 className="h-3.5 w-3.5"
                 fill="none"
@@ -113,19 +161,101 @@ export default function HomePage() {
         </div>
       </section>
 
-
-      {/* 02 - INTRODUCTION */}
-      <section className="bg-ivory py-24 lg:py-32">
+      {/* 02 - SERVICES */}
+      <section className="bg-ink py-20 text-ivory lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:items-start lg:gap-12 xl:gap-16">
-            <div className="relative lg:col-span-5 lg:pt-14">
+          <RevealSection>
+            <div className="mb-10 grid gap-7 border-b border-ivory/15 pb-9 lg:grid-cols-12 lg:items-end">
+              <div className="lg:col-span-7">
+                <p className="mb-5 font-sans text-[10px] tracking-[0.22em] uppercase text-bronze-soft">
+                  Ways Joey Can Help
+                </p>
+
+                <h2 className="font-serif text-[clamp(2.8rem,5vw,5.25rem)] leading-[0.95] tracking-[-0.04em] text-ivory">
+                  Support shaped around
+                  <br />
+                  the situation in front of you.
+                </h2>
+              </div>
+
+              <div className="lg:col-span-4 lg:col-start-9">
+                <p className="max-w-md font-sans text-[14px] leading-[1.8] text-ivory/72">
+                  Three areas of work, connected by the same foundation:
+                  presence, structure, accountability, and human connection.
+                </p>
+              </div>
+            </div>
+          </RevealSection>
+
+          <div>
+            {services.map((service, index) => (
+              <RevealSection
+                key={service.href}
+                delay={Math.min(index + 1, 3)}
+              >
+                <Link
+                  href={service.href}
+                  className="group grid gap-6 border-b border-ivory/15 py-9 transition-colors duration-300 hover:border-ivory/35 focus-visible:border-ivory/35 md:grid-cols-12 md:items-center lg:py-11"
+                >
+                  <div className="md:col-span-1">
+                    <span className="font-sans text-[10px] tracking-[0.2em] text-ivory/60">
+                      {service.number}
+                    </span>
+                  </div>
+
+                  <div className="md:col-span-4">
+                    <p className="mb-3 font-sans text-[10px] tracking-[0.2em] uppercase text-bronze-soft">
+                      {service.eyebrow}
+                    </p>
+
+                    <h3 className="font-serif text-[clamp(2rem,3vw,3.25rem)] leading-[1] tracking-[-0.025em] text-ivory transition-colors duration-500 group-hover:text-bronze-soft group-focus-visible:text-bronze-soft">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  <div className="md:col-span-5 md:col-start-7">
+                    <p className="max-w-xl font-sans text-[15px] leading-[1.8] text-ivory/72">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center md:col-span-1 md:col-start-12 md:justify-end">
+                    <span
+                      className="flex items-center gap-2 font-sans text-[9px] tracking-[0.16em] uppercase text-ivory/65 transition-colors duration-300 group-hover:text-ivory group-focus-visible:text-ivory"
+                      aria-hidden="true"
+                    >
+                      Explore
+                      <span className="font-serif text-xl transition-transform duration-300 group-hover:translate-x-1">
+                        {"→"}
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+              </RevealSection>
+            ))}
+          </div>
+
+          <RevealSection delay={2}>
+            <div className="mt-9 flex justify-end">
+              <Link href="/work" className="editorial-link editorial-link--light">
+                View All Work
+              </Link>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* 03 - WHY JOEY */}
+      <section className="bg-ivory py-24 lg:py-36">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div className="lg:col-span-5">
               <RevealSection>
                 <div className="img-hover-scale relative aspect-[4/5] overflow-hidden border border-stone/15 bg-alabaster">
                   <Image
                     src="/images/joey/portrait.webp"
                     alt="Joey Rubino"
                     fill
-                    loading="eager"
                     className="object-cover grayscale transition-[filter,transform] duration-1000 hover:grayscale-0"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
@@ -138,249 +268,54 @@ export default function HomePage() {
               </RevealSection>
             </div>
 
-            <div className="lg:col-span-7 lg:col-start-6">
-              <RevealSection className="mb-10 lg:mb-12">
-                <div className="mb-7 flex items-center gap-4">
+            <div className="lg:col-span-6 lg:col-start-7">
+              <RevealSection>
+                <div className="mb-6 flex items-center gap-4">
                   <span
                     className="h-px w-8 bg-bronze-deep"
                     aria-hidden="true"
                   />
 
                   <p className="text-eyebrow">
-                    Sober Companion · Coach · Guide
+                    Why Joey
                   </p>
                 </div>
 
-                <h2 className="font-serif text-[clamp(2.7rem,3.65vw,4.3rem)] leading-[0.98] tracking-[-0.035em] text-ink">
-                  <span className="block lg:whitespace-nowrap">
-                    A grounded approach
-                  </span>
-                  <span className="block lg:whitespace-nowrap">
-                    to meaningful change.
+                <h2 className="max-w-[760px] font-serif text-[clamp(2.8rem,4vw,4.6rem)] leading-[0.97] tracking-[-0.038em] text-ink">
+                  Lived experience.
+                  <br />
+                  Practical structure.
+                  <br />
+                  <span className="text-body">
+                    Human understanding.
                   </span>
                 </h2>
               </RevealSection>
 
               <RevealSection delay={1}>
-                <div className="max-w-2xl space-y-5 text-body-lg text-body">
+                <div className="mt-9 max-w-2xl space-y-5 text-body-lg text-body">
                   <p>
-                    Transformation requires more than just stopping a behavior
-                    &mdash; it requires building a life that supports you.
-                    Drawing on over ten years of lived experience in recovery
-                    and a background in fitness and wellness, Joey provides the
-                    structure, accountability, and connection needed to
-                    navigate change.
+                    Joey&apos;s work is informed by more than a decade of lived
+                    recovery experience and a long background in fitness,
+                    wellness, personal training, and group fitness.
                   </p>
 
                   <p>
-                    Whether working as a sober companion through early
-                    recovery, guiding interventions, or integrating fitness
-                    into a new way of living, the approach is always personal,
-                    discreet, and deeply compassionate.
-                  </p>
-                </div>
-              </RevealSection>
-
-              <RevealSection delay={2} className="mt-8">
-                <Link href="/about" className="editorial-link">
-                  Read Joey&apos;s Story
-                </Link>
-              </RevealSection>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* 03 - WORK / SERVICES */}
-      <section className="bg-ink py-24 text-ivory lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <SectionHeading
-            eyebrow="How Joey Can Help"
-            title="Work & Services"
-            dark
-          />
-
-          <div className="border-t border-ivory/15">
-            {[
-              {
-                number: "01",
-                eyebrow: "Recovery Support",
-                title: "Sober Companioning",
-                desc: "Real-world presence, structure, and accountability for people navigating recovery and transition.",
-                href: "/work/sober-companioning",
-              },
-              {
-                number: "02",
-                eyebrow: "Movement & Structure",
-                title: "Fitness & Transformation",
-                desc: "Movement, consistency, and practical structure brought together as tools for sustainable personal change.",
-                href: "/work/fitness",
-              },
-              {
-                number: "03",
-                eyebrow: "Conversation & Clarity",
-                title: "Interventions",
-                desc: "Structured and compassionate conversations intended to create clarity and help open a path toward recovery.",
-                href: "/work/interventions",
-              },
-            ].map((service, i) => (
-              <RevealSection key={service.title} delay={i + 1}>
-                <Link
-                  href={service.href}
-                  className="group grid gap-6 border-b border-ivory/15 py-9 transition-colors hover:border-ivory/35 md:grid-cols-12 md:items-center lg:py-11"
-                >
-                  <div className="md:col-span-1">
-                    <span className="font-sans text-[10px] tracking-[0.2em] text-ivory/50">
-                      {service.number}
-                    </span>
-                  </div>
-
-                  <div className="md:col-span-4">
-                    <p className="mb-3 font-sans text-[10px] tracking-[0.2em] uppercase text-bronze-soft">
-                      {service.eyebrow}
-                    </p>
-
-                    <h3 className="font-serif text-[clamp(2rem,3vw,3.25rem)] leading-[1] tracking-[-0.025em] text-ivory transition-colors duration-500 group-hover:text-bronze-soft">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  <div className="md:col-span-5 md:col-start-7">
-                    <p className="max-w-xl font-sans text-[15px] leading-[1.8] text-ivory/68">
-                      {service.desc}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center md:col-span-1 md:col-start-12 md:justify-end">
-                    <span
-                      className="flex items-center gap-2 font-sans text-[9px] tracking-[0.16em] uppercase text-ivory/45 transition-colors duration-300 group-hover:text-ivory"
-                      aria-hidden="true"
-                    >
-                      Explore
-                      <span className="font-serif text-xl transition-transform duration-300 group-hover:translate-x-1">
-                        →
-                      </span>
-                    </span>
-                  </div>
-                </Link>
-              </RevealSection>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* 04 - HOW IT WORKS */}
-      <section className="bg-alabaster py-24 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <RevealSection className="mx-auto mb-14 max-w-4xl text-center lg:mb-20">
-            <div className="mb-6 flex items-center justify-center gap-4">
-              <span
-                className="h-px w-8 bg-bronze-deep"
-                aria-hidden="true"
-              />
-
-              <p className="text-eyebrow">How It Works</p>
-            </div>
-
-            <h2 className="font-serif text-[clamp(2.5rem,4.5vw,4.75rem)] leading-[0.98] tracking-[-0.035em] text-ink">
-              A personal process.
-              <br />
-              <span className="text-body">A considered approach.</span>
-            </h2>
-          </RevealSection>
-
-          <div className="grid border-t border-stone/25 md:grid-cols-3">
-            {[
-              {
-                num: "01",
-                title: "Reach Out",
-                desc: "Start with a private conversation about what is happening and what kind of support may be needed.",
-              },
-              {
-                num: "02",
-                title: "Understand the Need",
-                desc: "Create space to understand the circumstances, goals, and type of support that may be appropriate.",
-              },
-              {
-                num: "03",
-                title: "Create the Next Step",
-                desc: "If working together makes sense, establish a personalized direction for support, structure, accountability, or recovery.",
-              },
-            ].map((step, index) => (
-              <RevealSection
-                key={step.num}
-                delay={index + 1}
-                className={`h-full ${
-                  index < 2 ? "md:border-r md:border-stone/20" : ""
-                }`}
-              >
-                <div className="h-full border-b border-stone/20 py-10 md:min-h-[270px] md:border-b-0 md:px-8 md:py-12">
-                  <p className="mb-10 font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
-                    {step.num}
-                  </p>
-
-                  <h3 className="mb-5 max-w-xs font-serif text-[clamp(1.55rem,2.2vw,2.25rem)] leading-[1.05] tracking-[-0.02em] text-ink">
-                    {step.title}
-                  </h3>
-
-                  <p className="max-w-sm font-sans text-[15px] leading-[1.8] text-body">
-                    {step.desc}
-                  </p>
-                </div>
-              </RevealSection>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* 05 - ABOUT JOEY / STORY */}
-      <section className="overflow-hidden border-t border-stone/10 bg-ivory py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-6">
-              <RevealSection>
-                <p className="text-eyebrow mb-6">
-                  About Joey
-                </p>
-
-                <h2 className="max-w-[760px] font-serif text-[clamp(2.7rem,3.55vw,4.1rem)] leading-[0.98] tracking-[-0.035em] text-ink">
-                  Experience
-                  <br />
-                  shaped by life.
-                  <br />
-                  <span className="text-body">
-                    Guidance grounded in
-                  </span>
-                  <br />
-                  <span className="text-body">
-                    understanding.
-                  </span>
-                </h2>
-              </RevealSection>
-            </div>
-
-            <div className="lg:col-span-6 lg:col-start-7">
-              <RevealSection delay={1}>
-                <div className="max-w-2xl space-y-5 font-sans text-[16px] leading-[1.85] text-body">
-                  <p>
-                    Joey&apos;s work is informed by his own recovery and years
-                    spent in fitness, personal training, group fitness, and
-                    demanding professional environments. That experience
-                    helped shape a practical approach centered on structure,
-                    consistency, movement, and human connection.
-                  </p>
-
-                  <p>
-                    His background includes training across interventions, health coaching, and yoga, together with experience working
-                    and traveling in high-demand environments. The work remains
-                    personal and grounded in meeting people where they are.
+                    His background also includes training across interventions,
+                    health coaching, and yoga, along with experience working and
+                    traveling in demanding professional environments. The
+                    approach is personal, practical, and centered on meeting
+                    people where life is actually happening.
                   </p>
                 </div>
               </RevealSection>
 
               <RevealSection delay={2}>
-                <div className="mb-7 mt-9 grid grid-cols-1 border-y border-stone/20 sm:grid-cols-3">
+                <div className="mb-8 mt-9 grid grid-cols-1 border-y border-stone/20 sm:grid-cols-3">
                   {[
-                    ["Foundation", "Lived Experience"],
+                    ["Foundation", "Lived Recovery"],
                     ["Background", "Fitness & Wellness"],
-                    ["Focus", "Recovery Support"],
+                    ["Approach", "Personal & Practical"],
                   ].map(([label, value], index) => (
                     <div
                       key={label}
@@ -404,41 +339,90 @@ export default function HomePage() {
 
               <RevealSection delay={3}>
                 <Link href="/about" className="editorial-link">
-                  About Joey
+                  Read Joey&apos;s Story
                 </Link>
               </RevealSection>
             </div>
           </div>
         </div>
       </section>
-      {/* 06 - EDITORIAL STATEMENT */}
-      <section className="bg-ink text-ivory py-32 lg:py-48 flex items-center justify-center">
-        <div className="mx-auto max-w-4xl px-6 text-center space-y-12 lg:space-y-16">
-          <RevealSection>
-            <h2 className="font-serif text-[clamp(1.5rem,4vw,3.5rem)] leading-tight text-ivory/80">
-              FROM SURVIVING TO LIVING.
-            </h2>
-          </RevealSection>
-          <RevealSection delay={1}>
-            <h2 className="font-serif text-[clamp(1.5rem,4vw,3.5rem)] leading-tight text-ivory/90">
-              FROM CHAOS TO CLARITY.
-            </h2>
-          </RevealSection>
-          <RevealSection delay={2}>
-            <h2 className="font-serif text-[clamp(1.5rem,4vw,3.5rem)] leading-tight text-ivory">
-              FROM ISOLATION TO CONNECTION.
-            </h2>
-          </RevealSection>
+
+      {/* 04 - HOW SUPPORT WORKS */}
+      <section className="bg-alabaster py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <RevealSection>
+                <div className="mb-6 flex items-center gap-4">
+                  <span
+                    className="h-px w-8 bg-bronze-deep"
+                    aria-hidden="true"
+                  />
+
+                  <p className="text-eyebrow">
+                    How Support Begins
+                  </p>
+                </div>
+
+                <h2 className="font-serif text-[clamp(2.65rem,4vw,4.4rem)] leading-[0.98] tracking-[-0.035em] text-ink">
+                  Start with what
+                  <br />
+                  is happening now.
+                </h2>
+
+                <p className="mt-7 max-w-sm font-sans text-[15px] leading-[1.8] text-body">
+                  No template and no pressure. The first goal is simply to
+                  understand the situation and determine what kind of support
+                  may actually be useful.
+                </p>
+              </RevealSection>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <div className="border-t border-stone/25">
+                {processSteps.map((step, index) => (
+                  <RevealSection
+                    key={step.number}
+                    delay={Math.min(index + 1, 3)}
+                  >
+                    <div className="grid gap-5 border-b border-stone/25 py-8 sm:grid-cols-[52px_1fr] lg:py-10">
+                      <p className="font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
+                        {step.number}
+                      </p>
+
+                      <div>
+                        <h3 className="font-serif text-[clamp(1.8rem,2.7vw,2.8rem)] leading-[1.04] tracking-[-0.025em] text-ink">
+                          {step.title}
+                        </h3>
+
+                        <p className="mt-4 max-w-xl font-sans text-[15px] leading-[1.8] text-body">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </RevealSection>
+                ))}
+              </div>
+
+              <RevealSection delay={3}>
+                <div className="mt-9">
+                  <Link href="/contact" className="editorial-link">
+                    Start Privately
+                  </Link>
+                </div>
+              </RevealSection>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 07 - FINDING MEANING */}
-      <section className="overflow-hidden bg-olive py-24 text-ivory lg:py-36">
+      {/* 05 - FINDING MEANING */}
+      <section className="overflow-hidden bg-olive py-24 text-ivory lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-8">
               <RevealSection>
-                <p className="text-eyebrow text-eyebrow--dark mb-6">
+                <p className="mb-6 font-sans text-[10px] tracking-[0.22em] uppercase text-bronze-soft">
                   Finding Meaning
                 </p>
               </RevealSection>
@@ -454,42 +438,42 @@ export default function HomePage() {
 
             <div className="lg:col-span-3 lg:col-start-10">
               <RevealSection delay={2}>
-                <div className="border-t border-ivory/20 pt-7">
-                  <p className="font-sans text-[15px] leading-[1.8] text-ivory/72">
+                <div className="border-t border-ivory/25 pt-7">
+                  <p className="font-sans text-[15px] leading-[1.8] text-ivory/75">
                     Finding Meaning extends Joey&apos;s recovery experience into
-                    education, awareness, speaking, podcasting, and outreach.
+                    education, awareness, speaking, and outreach.
                   </p>
 
-                  <a
+                  <Link
                     href="/finding-meaning"
                     className="editorial-link editorial-link--light mt-8"
                   >
                     Explore Finding Meaning
-                  </a>
+                  </Link>
                 </div>
               </RevealSection>
             </div>
           </div>
 
           <div
-            className="mt-16 grid grid-cols-2 border-t border-ivory/15 md:mt-20 md:grid-cols-4"
+            className="mt-16 grid grid-cols-2 border-t border-ivory/20 md:mt-20 md:grid-cols-4"
             aria-label="Finding Meaning focus areas"
           >
             {[
               "School Presentations",
               "Recovery Education",
-              "Podcasting",
-              "Speaking & Outreach",
+              "Speaking",
+              "Community Outreach",
             ].map((item, index) => (
               <div
                 key={item}
-                className="border-b border-ivory/10 px-5 py-8 first:pl-0 last:pr-0 md:border-b-0 md:border-r md:px-7 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                className="border-b border-ivory/15 px-5 py-8 first:pl-0 last:pr-0 md:border-b-0 md:border-r md:px-7 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
               >
                 <p className="mb-4 font-sans text-[10px] tracking-[0.18em] text-bronze-soft">
                   0{index + 1}
                 </p>
 
-                <p className="max-w-[180px] font-sans text-[11px] leading-[1.55] tracking-[0.13em] uppercase text-ivory/80">
+                <p className="max-w-[180px] font-sans text-[11px] leading-[1.55] tracking-[0.13em] uppercase text-ivory/82">
                   {item}
                 </p>
               </div>
@@ -497,168 +481,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* 08 - PHILOSOPHY */}
-      <section className="border-t border-stone/15 bg-ivory py-24 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <RevealSection className="mb-14 max-w-4xl lg:mb-20">
-            <div className="mb-6 flex items-center gap-4">
-              <span
-                className="h-px w-8 bg-bronze-deep"
-                aria-hidden="true"
-              />
 
-              <p className="text-eyebrow">Philosophy</p>
-            </div>
-
-            <h2 className="font-serif text-[clamp(2.6rem,4.5vw,4.8rem)] leading-[0.99] tracking-[-0.035em] text-ink">
-              The foundation
-              <br />
-              of the work.
-            </h2>
-          </RevealSection>
-
-          <div className="grid border-t border-stone/25 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                number: "01",
-                title: "Presence",
-                desc: "Support where life actually happens.",
-              },
-              {
-                number: "02",
-                title: "Connection",
-                desc: "Recovery does not happen in isolation.",
-              },
-              {
-                number: "03",
-                title: "Structure",
-                desc: "Create sustainable systems instead of temporary fixes.",
-              },
-              {
-                number: "04",
-                title: "Meaning",
-                desc: "Build a life that no longer requires escape.",
-              },
-            ].map((item, index) => (
-              <RevealSection
-                key={item.title}
-                delay={index + 1}
-                className={`h-full ${
-                  index < 3 ? "lg:border-r lg:border-stone/20" : ""
-                } ${
-                  index % 2 === 0 ? "sm:border-r sm:border-stone/20" : ""
-                }`}
-              >
-                <div className="h-full border-b border-stone/20 py-10 sm:px-7 lg:min-h-[270px] lg:border-b-0 lg:px-8 lg:py-12">
-                  <p className="mb-10 font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
-                    {item.number}
-                  </p>
-
-                  <h3 className="mb-6 font-sans text-[11px] tracking-[0.18em] uppercase text-ink">
-                    {item.title}
-                  </h3>
-
-                  <p className="max-w-xs font-serif text-[clamp(1.55rem,2.1vw,2.15rem)] leading-[1.12] tracking-[-0.015em] text-ink/80">
-                    {item.desc}
-                  </p>
-                </div>
-              </RevealSection>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* 09 - LIFE & WORK */}
-      <section className="overflow-hidden bg-alabaster py-24 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <div className="grid gap-14 border-b border-stone/25 pb-16 lg:grid-cols-12 lg:items-end lg:pb-20">
-            <div className="lg:col-span-7">
-              <RevealSection>
-                <p className="text-eyebrow mb-6">
-                  Life &amp; Work
-                </p>
-
-                <h2 className="font-serif text-[clamp(3.2rem,6vw,6.5rem)] leading-[0.94] tracking-[-0.045em] text-ink">
-                  Recovery.
-                  <br />
-                  Movement.
-                  <br />
-                  <span className="text-bronze-deep">
-                    Meaning.
-                  </span>
-                </h2>
-              </RevealSection>
-            </div>
-
-            <div className="lg:col-span-4 lg:col-start-9">
-              <RevealSection delay={1}>
-                <div className="border-t border-stone/30 pt-7">
-                  <p className="font-sans text-[15px] leading-[1.85] text-body">
-                    A life shaped by more than a decade in recovery, more than
-                    two decades in fitness, and years spent navigating
-                    demanding professional environments, travel, and personal
-                    change.
-                  </p>
-                </div>
-              </RevealSection>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-3">
-            {[
-              {
-                number: "01",
-                title: "Recovery",
-                description:
-                  "Lived experience informs Joey's understanding of consistency, accountability, and rebuilding daily life.",
-              },
-              {
-                number: "02",
-                title: "Movement",
-                description:
-                  "Years in fitness, personal training, and group fitness shaped an approach grounded in structure and sustainable progress.",
-              },
-              {
-                number: "03",
-                title: "Meaning",
-                description:
-                  "Recovery became something Joey could bring into education, awareness, connection, and work intended to help others.",
-              },
-            ].map((item, index) => (
-              <RevealSection
-                key={item.title}
-                delay={index + 1}
-                className={`h-full ${
-                  index < 2 ? "lg:border-r lg:border-stone/20" : ""
-                }`}
-              >
-                <div
-                  className={`h-full border-b border-stone/20 py-10 lg:min-h-[290px] lg:border-b-0 lg:py-14 ${
-                    index === 0
-                      ? "lg:pr-9"
-                      : index === 2
-                        ? "lg:pl-9"
-                        : "lg:px-9"
-                  }`}
-                >
-                  <p className="mb-11 font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
-                    {item.number}
-                  </p>
-
-                  <h3 className="mb-7 font-serif text-[clamp(2.2rem,3.3vw,3.6rem)] leading-none tracking-[-0.03em] text-ink">
-                    {item.title}
-                  </h3>
-
-                  <p className="max-w-sm font-sans text-[15px] leading-[1.8] text-body">
-                    {item.description}
-                  </p>
-                </div>
-              </RevealSection>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* 10 - FAQ PREVIEW */}
-      <section className="bg-ivory py-24 lg:py-40">
+      {/* 06 - FAQ */}
+      <section className="bg-ivory py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
@@ -669,17 +494,20 @@ export default function HomePage() {
                     aria-hidden="true"
                   />
 
-                  <p className="text-eyebrow">FAQ</p>
+                  <p className="text-eyebrow">
+                    Before We Talk
+                  </p>
                 </div>
 
                 <h2 className="max-w-xl font-serif text-[clamp(2.7rem,4.5vw,4.8rem)] leading-[0.98] tracking-[-0.035em] text-ink">
-                  Questions
+                  A few useful
                   <br />
-                  you may have.
+                  answers first.
                 </h2>
 
                 <p className="mt-8 max-w-sm font-sans text-[15px] leading-[1.8] text-body">
-                  A few answers before a first conversation.
+                  Every situation is different. These answers are simply a
+                  starting point before a first conversation.
                 </p>
               </RevealSection>
             </div>
@@ -691,22 +519,17 @@ export default function HomePage() {
                     {
                       question: "What does working with Joey look like?",
                       answer:
-                        "Every situation is different. A first conversation can help clarify what you are looking for and which area of Joey's work may be relevant.",
+                        "Every situation is different. A first conversation can help clarify what is happening, what you are looking for, and which area of Joey's work may be relevant.",
                     },
                     {
                       question: "Who is sober companioning for?",
                       answer:
-                        "Sober companioning centers on real-world presence, structure, accountability, and support around recovery and periods of transition.",
-                    },
-                    {
-                      question: "What areas of work does Joey offer?",
-                      answer:
-                        "Joey's work is presented across sober companioning, fitness and transformation, and interventions.",
+                        "Sober companioning centers on real-world presence, structure, accountability, and support around recovery, transitions, travel, and the return to everyday life.",
                     },
                     {
                       question: "How do I get started?",
                       answer:
-                        "You can begin by calling or emailing Joey directly and sharing what you are looking for.",
+                        "Start with a private conversation. You can use the contact page, call Joey directly, or email him and briefly share what you are looking for.",
                     },
                   ]}
                 />
@@ -721,7 +544,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* 11 - FINAL CTA */}
+
+      {/* 07 - FINAL CTA */}
       <FinalCTA heading="You don't have to navigate change alone." />
     </>
   );
