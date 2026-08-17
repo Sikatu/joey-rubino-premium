@@ -1,0 +1,738 @@
+@import "tailwindcss";
+
+/* Design Tokens */
+:root {
+  --color-alabaster: #F2EFE9;
+  --color-ivory: #FAF8F4;
+  --color-ink: #171715;
+  --color-olive: #353A33;
+  --color-stone: #ACA294;
+  --color-bronze: #9A815F;
+
+  --font-serif: var(--font-playfair), "Playfair Display", "Georgia", serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-alabaster: #F2EFE9;
+  --color-ivory: #FAF8F4;
+  --color-ink: #171715;
+  --color-olive: #353A33;
+  --color-stone: #ACA294;
+  --color-bronze: #9A815F;
+  --color-ink-light: #2a2a28;
+
+  --font-serif: var(--font-playfair), "Playfair Display", "Georgia", serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+/* Global Reset & Base */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: var(--color-stone);
+  color: var(--color-ivory);
+}
+
+/* Typography Scale */
+.text-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
+}
+
+.text-headline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 4rem);
+}
+
+.text-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.75rem);
+}
+
+.text-subtitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem);
+}
+
+.text-body-lg {
+  font-size: clamp(1.05rem, 0.5vw + 0.9rem, 1.2rem);
+  line-height: 1.7;
+}
+
+.text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+.text-caption {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Image Hover */
+.img-hover-scale {
+  overflow: hidden;
+}
+
+.img-hover-scale img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-hover-scale:hover img {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-hover-scale:hover img {
+    transform: none;
+  }
+}
+
+/* Thin Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-stone);
+  opacity: 0.3;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone);
+  border-radius: 3px;
+}
+
+/* ─── Global Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ============================================================
+   PHASE 5G.1 — LUXURY ELEVATION
+   ============================================================ */
+
+:root {
+  --color-body: #746c63;
+  --color-bronze-soft: #b39b79;
+  --color-bronze-deep: #806a4e;
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-luxury-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Editorial typography refinement */
+.text-display {
+  font-size: clamp(3.25rem, 7vw, 7.75rem);
+  line-height: 0.93;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.text-headline {
+  font-size: clamp(2.55rem, 4.8vw, 5.25rem);
+  line-height: 0.99;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.text-title {
+  font-size: clamp(1.8rem, 3vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.text-subtitle {
+  font-size: clamp(1.35rem, 1.7vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.text-body-lg {
+  line-height: 1.82;
+  letter-spacing: -0.008em;
+}
+
+.text-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  color: var(--color-bronze);
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+}
+
+/* More considered selection treatment */
+::selection {
+  background-color: var(--color-bronze);
+  color: var(--color-ivory);
+}
+
+/* Slower, more cinematic reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.95s var(--ease-luxury),
+    transform 0.95s var(--ease-luxury);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.22s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.32s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.42s;
+}
+
+/* Photography should move almost imperceptibly */
+.img-hover-scale img {
+  transition: transform 0.95s var(--ease-luxury);
+}
+
+.img-hover-scale:hover img {
+  transform: scale(1.025);
+}
+
+/* Premium divider treatment */
+.divider {
+  background-color: var(--color-bronze);
+  opacity: 0.22;
+}
+
+/* Refined accessible focus treatment */
+:focus-visible {
+  outline: 1px solid var(--color-bronze);
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+
+/* ============================================================
+   PREMIUM BUTTON SYSTEM
+   ============================================================ */
+
+.lux-button {
+  --lux-fill: var(--color-ink);
+
+  position: relative;
+  display: inline-flex;
+  min-width: 172px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  padding: 0.95rem 1.9rem;
+
+  background-image: linear-gradient(
+    to right,
+    var(--lux-fill),
+    var(--lux-fill)
+  );
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.19em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  transition:
+    background-size 0.65s var(--ease-luxury),
+    border-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.55s var(--ease-luxury);
+}
+
+.lux-button::after {
+  content: "→";
+  margin-left: 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: transform 0.55s var(--ease-luxury);
+}
+
+.lux-button:hover {
+  background-size: 100% 100%;
+  transform: translateY(-1px);
+}
+
+.lux-button:hover::after {
+  transform: translateX(4px);
+}
+
+.lux-button--primary {
+  --lux-fill: var(--color-bronze);
+
+  border-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+.lux-button--primary:hover {
+  border-color: var(--color-bronze);
+  color: var(--color-ivory);
+}
+
+.lux-button--secondary {
+  --lux-fill: var(--color-bronze);
+
+  border-color: var(--color-ivory);
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+.lux-button--secondary:hover {
+  border-color: var(--color-bronze);
+  color: var(--color-ivory);
+}
+
+.lux-button--outline {
+  --lux-fill: var(--color-ink);
+
+  border-color: var(--color-ink);
+  background-color: transparent;
+  color: var(--color-ink);
+}
+
+.lux-button--outline:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+.lux-button:disabled,
+.lux-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  transform: none;
+  background-size: 0% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-button,
+  .lux-button::after {
+    transition: none;
+  }
+
+  .lux-button:hover {
+    transform: none;
+  }
+
+  .lux-button:hover::after {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   PHASE 5G.1R1 — MOBILE TYPOGRAPHY
+   Preserve luxury scale without mobile clipping
+   ============================================================ */
+
+@media (max-width: 639px) {
+  .text-display {
+    font-size: clamp(2.75rem, 14vw, 4.35rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .text-headline {
+    font-size: clamp(2.15rem, 10.5vw, 3.35rem);
+    line-height: 1;
+    letter-spacing: -0.032em;
+  }
+
+  .text-title {
+    font-size: clamp(1.65rem, 7vw, 2.45rem);
+    line-height: 1.07;
+  }
+
+  .text-body-lg {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .text-eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .text-display {
+    font-size: clamp(3.5rem, 8vw, 5.75rem);
+  }
+
+  .text-headline {
+    font-size: clamp(2.65rem, 6vw, 4.25rem);
+  }
+}
+
+/* ============================================================
+   PHASE 5G.1R2 — EDITORIAL REFINEMENT
+   ============================================================ */
+
+/*
+  Decorative stone remains intentionally soft.
+  Important copy uses --color-body instead.
+  Bronze-deep is for readable detail on light surfaces.
+  Bronze-soft is for detail on dark surfaces.
+*/
+
+.text-eyebrow {
+  color: var(--color-bronze-deep);
+}
+
+.text-eyebrow--dark {
+  color: var(--color-bronze-soft);
+}
+
+.editorial-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.45rem;
+
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  transition: color 0.45s ease;
+}
+
+.editorial-link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+
+  background: var(--color-bronze-deep);
+  transform: scaleX(0.28);
+  transform-origin: left center;
+
+  transition: transform 0.65s var(--ease-luxury);
+}
+
+.editorial-link::after {
+  content: "→";
+  font-size: 0.875rem;
+  letter-spacing: 0;
+
+  transition: transform 0.55s var(--ease-luxury);
+}
+
+.editorial-link:hover {
+  color: var(--color-bronze-deep);
+}
+
+.editorial-link:hover::before {
+  transform: scaleX(1);
+}
+
+.editorial-link:hover::after {
+  transform: translateX(4px);
+}
+
+.editorial-link--light {
+  color: var(--color-ivory);
+}
+
+.editorial-link--light::before {
+  background: var(--color-bronze-soft);
+}
+
+.editorial-link--light:hover {
+  color: var(--color-bronze-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-link,
+  .editorial-link::before,
+  .editorial-link::after {
+    transition: none;
+  }
+
+  .editorial-link:hover::after {
+    transform: none;
+  }
+}
+
+/* Dark-surface luxury outline */
+.lux-button--dark-outline {
+  --lux-fill: var(--color-ivory);
+
+  border-color: rgb(250 248 244 / 0.42);
+  background-color: transparent;
+  color: var(--color-ivory);
+}
+
+.lux-button--dark-outline:hover {
+  border-color: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+/* === SITE-WIDE PREMIUM SURFACE SYSTEM === */
+
+:root {
+  --premium-warm-01: #faf8f4;
+  --premium-warm-02: #f6f2eb;
+  --premium-warm-03: #f0ebe2;
+
+  --premium-light-keyline: rgb(172 162 148 / 0.26);
+  --premium-dark-keyline: rgb(250 248 244 / 0.10);
+}
+
+
+/* ------------------------------------------------------------
+   LIGHT HERO SURFACES
+   Warm paper-like depth without turning into a graphic effect.
+   ------------------------------------------------------------ */
+
+main > section:first-child[class*="bg-ivory"],
+main > section:first-child[class*="bg-alabaster"] {
+  background-image:
+    radial-gradient(
+      circle at 88% 8%,
+      rgb(154 129 95 / 0.055) 0,
+      rgb(154 129 95 / 0.025) 18rem,
+      transparent 34rem
+    ),
+    linear-gradient(
+      135deg,
+      var(--premium-warm-01) 0%,
+      var(--premium-warm-02) 56%,
+      var(--premium-warm-03) 100%
+    );
+}
+
+
+/* ------------------------------------------------------------
+   DARK HERO SURFACES
+   Adds depth to flat Ink heroes while remaining nearly invisible.
+   ------------------------------------------------------------ */
+
+main > section:first-child[class*="bg-ink"] {
+  background-image:
+    radial-gradient(
+      circle at 84% 12%,
+      rgb(154 129 95 / 0.07) 0,
+      transparent 31rem
+    ),
+    linear-gradient(
+      135deg,
+      #171715 0%,
+      #1b1c19 55%,
+      #252823 100%
+    );
+}
+
+
+/* ------------------------------------------------------------
+   OLIVE HERO SURFACES
+   Preserves the olive identity while introducing depth.
+   ------------------------------------------------------------ */
+
+main > section:first-child[class*="bg-olive"] {
+  background-image:
+    radial-gradient(
+      circle at 84% 12%,
+      rgb(154 129 95 / 0.06) 0,
+      transparent 30rem
+    ),
+    linear-gradient(
+      135deg,
+      #30352f 0%,
+      #353a33 58%,
+      #3b4038 100%
+    );
+}
+
+
+/* ------------------------------------------------------------
+   LIGHT → LIGHT CHAPTER SEPARATION
+
+   Only add an automatic boundary when the preceding section does
+   NOT already provide border-b or border-y.
+   ------------------------------------------------------------ */
+
+section[class*="bg-ivory"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-ivory"],
+
+section[class*="bg-ivory"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-alabaster"],
+
+section[class*="bg-alabaster"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-ivory"],
+
+section[class*="bg-alabaster"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-alabaster"] {
+  box-shadow: inset 0 1px 0 var(--premium-light-keyline);
+}
+
+
+/* ------------------------------------------------------------
+   DARK → DARK CHAPTER SEPARATION
+   Usually tonal contrast is enough, but consecutive dark fields
+   receive one extremely quiet architectural rule.
+   ------------------------------------------------------------ */
+
+section[class*="bg-ink"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-ink"],
+
+section[class*="bg-ink"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-olive"],
+
+section[class*="bg-olive"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-ink"],
+
+section[class*="bg-olive"]:not([class*="border-b"]):not([class*="border-y"])
+  + section[class*="bg-olive"] {
+  box-shadow: inset 0 1px 0 var(--premium-dark-keyline);
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE ATMOSPHERE
+   Mobile gets less decorative depth and more direct readability.
+   ------------------------------------------------------------ */
+
+@media (max-width: 1023px) {
+  main > section:first-child[class*="bg-ivory"],
+  main > section:first-child[class*="bg-alabaster"] {
+    background-image:
+      radial-gradient(
+        circle at 100% 0%,
+        rgb(154 129 95 / 0.04) 0,
+        transparent 20rem
+      ),
+      linear-gradient(
+        145deg,
+        var(--premium-warm-01) 0%,
+        var(--premium-warm-02) 100%
+      );
+  }
+
+  main > section:first-child[class*="bg-ink"] {
+    background-image:
+      radial-gradient(
+        circle at 100% 0%,
+        rgb(154 129 95 / 0.05) 0,
+        transparent 20rem
+      ),
+      linear-gradient(
+        145deg,
+        #171715 0%,
+        #20221e 100%
+      );
+  }
+
+  main > section:first-child[class*="bg-olive"] {
+    background-image:
+      linear-gradient(
+        145deg,
+        #30352f 0%,
+        #353a33 100%
+      );
+  }
+}
