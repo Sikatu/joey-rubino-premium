@@ -135,18 +135,10 @@ export function ContactDrawer({ open, onClose }: ContactDrawerProps) {
             className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.1em] uppercase text-ink hover:text-bronze transition-colors group"
             onClick={onClose}
           >
-            Send a private message
+            Start a Private Conversation
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </Link>
-
-          <Link
-            href="/contact"
-            className="mt-4 font-sans text-[12px] tracking-[0.08em] text-stone hover:text-ink transition-colors"
-            onClick={onClose}
-          >
-            View Contact Page
           </Link>
         </div>
 

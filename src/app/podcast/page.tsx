@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Podcast",
   description:
     "Finding Meaning podcast information and future episode updates.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PodcastPage() {

@@ -31,7 +31,7 @@ const workLinks = [
 const desktopLinks = [
   { href: "/about", label: "About" },
   { href: "/finding-meaning", label: "Finding Meaning" },
-  { href: "/podcast", label: "Podcast" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -407,7 +407,7 @@ export function Header() {
               onClick={() => setDrawerOpen(true)}
               className={`group ml-2 flex items-center gap-3 border px-5 py-3 font-sans text-[10px] tracking-[0.18em] uppercase transition-[background-color,border-color,color] duration-500 ${talkButtonClass}`}
             >
-              Let&apos;s Talk
+              Private Conversation
 
               <span
                 className="transition-transform duration-500 group-hover:translate-x-1"

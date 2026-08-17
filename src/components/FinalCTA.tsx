@@ -10,7 +10,7 @@ interface FinalCTAProps {
 
 export function FinalCTA({
   heading,
-  buttonText = "Start a conversation",
+  buttonText = "Start a Private Conversation",
   href = "/contact",
   compact = false,
 }: FinalCTAProps) {

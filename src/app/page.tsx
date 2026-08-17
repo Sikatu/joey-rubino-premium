@@ -34,7 +34,7 @@ export default function HomePage() {
             <div className="lg:col-span-8 xl:-translate-x-16">
               <RevealSection>
                 <p className="mb-7 font-sans text-[10px] tracking-[0.28em] uppercase text-bronze-soft sm:text-[11px]">
-                  Recovery · Movement · Meaning
+                  Los Angeles · Sober Companioning · Recovery Support
                 </p>
               </RevealSection>
 
@@ -59,8 +59,7 @@ export default function HomePage() {
               <RevealSection delay={2}>
                 <div className="max-w-md border-t border-ivory/20 pt-7">
                   <p className="max-w-md font-sans text-[14px] leading-[1.8] text-ivory/68">
-                    Recovery support, fitness, and guidance shaped by lived
-                    experience, structure, and human connection.
+                    Private sober companioning, interventions, fitness coaching, and recovery support for individuals and families navigating change.
                   </p>
 
                   <div className="mt-9 flex max-w-md flex-col gap-3">
@@ -69,7 +68,7 @@ export default function HomePage() {
                       variant="secondary"
                       className="min-h-[58px] w-full"
                     >
-                      Work with Joey
+                      Start a Private Conversation
                     </Button>
 
                     <Button
@@ -77,7 +76,7 @@ export default function HomePage() {
                       variant="outline"
                       className="lux-button--dark-outline min-h-[52px] w-full opacity-80 transition-opacity hover:opacity-100"
                     >
-                      Discover His Approach
+                      Meet Joey
                     </Button>
                   </div>
                 </div>
@@ -369,8 +368,7 @@ export default function HomePage() {
                   </p>
 
                   <p>
-                    His background includes certifications in Interventions,
-                    Health Coaching, and Yoga, together with experience working
+                    His background includes training across interventions, health coaching, and yoga, together with experience working
                     and traveling in high-demand environments. The work remains
                     personal and grounded in meeting people where they are.
                   </p>

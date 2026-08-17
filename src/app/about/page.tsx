@@ -166,8 +166,8 @@ export default function AboutPage() {
                       discretion matter.
                     </p>
                     <p>
-                      Joey&apos;s background includes certifications in
-                      Interventions, Health Coaching, and Yoga. Together with
+                      Joey&apos;s background includes training across
+                      interventions, health coaching, and yoga. Together with
                       his recovery experience and years in fitness and wellness,
                       that training informs a practical and human approach to
                       support.

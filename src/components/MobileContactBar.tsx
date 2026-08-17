@@ -57,7 +57,7 @@ export function MobileContactBar() {
             />
           </svg>
 
-          Message
+          Email
         </a>
       </div>
     </div>

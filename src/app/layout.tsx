@@ -19,19 +19,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Joey Rubino \u2014 Sober Companion, Coach & Transformational Guide",
+    default: "Joey Rubino \u2014 Sober Companion & Recovery Support",
     template: "%s | Joey Rubino",
   },
   description:
-    "Joey Rubino offers discreet sober companioning, fitness coaching, and transformational guidance. A grounded approach to recovery, accountability, and meaningful change.",
+    "Private sober companioning, interventions, fitness coaching, and recovery support with Joey Rubino in Los Angeles. Personal, discreet, and grounded in real-world accountability.",
   metadataBase: new URL("https://joeyrubinorehab.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Joey Rubino",
-    title: "Joey Rubino \u2014 Sober Companion, Coach & Transformational Guide",
+    title: "Joey Rubino \u2014 Sober Companion & Recovery Support",
     description:
-      "Discreet sober companioning, fitness coaching, and transformational guidance. A grounded approach to recovery, accountability, and meaningful change.",
+      "Private sober companioning, interventions, fitness coaching, and recovery support with Joey Rubino in Los Angeles.",
     images: [
       {
         url: "/opengraph-image",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@joeyrubino",
-    title: "Joey Rubino \u2014 Sober Companion, Coach & Transformational Guide",
+    title: "Joey Rubino \u2014 Sober Companion & Recovery Support",
     description:
-      "Discreet sober companioning, fitness coaching, and transformational guidance.",
+      "Private sober companioning, interventions, fitness coaching, and recovery support.",
     images: ["/opengraph-image"],
   },
   robots: {

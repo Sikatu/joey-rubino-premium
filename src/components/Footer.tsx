@@ -3,7 +3,6 @@ import Link from "next/link";
 const navigateLinks = [
   { href: "/about", label: "About" },
   { href: "/finding-meaning", label: "Finding Meaning" },
-  { href: "/podcast", label: "Podcast" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
@@ -59,7 +58,7 @@ export function Footer() {
               href="/contact"
               className="group mt-6 flex w-full items-center justify-between border border-ivory/35 px-5 py-3.5 font-sans text-[10px] tracking-[0.17em] uppercase text-ivory transition-[background-color,border-color,color] duration-500 hover:border-ivory hover:bg-ivory hover:text-ink"
             >
-              Start a Conversation
+              Start a Private Conversation
 
               <span
                 className="transition-transform duration-500 group-hover:translate-x-1"

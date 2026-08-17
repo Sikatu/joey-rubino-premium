@@ -16,10 +16,8 @@ const mainLinks = [
     href: "/finding-meaning",
     number: "03",
     label: "Finding Meaning",
-  },
-  { href: "/podcast", number: "04", label: "Podcast" },
-  { href: "/faq", number: "05", label: "FAQ" },
-  { href: "/contact", number: "06", label: "Contact" },
+  },  { href: "/faq", number: "04", label: "FAQ" },
+  { href: "/contact", number: "05", label: "Contact" },
 ];
 
 const workLinks = [
