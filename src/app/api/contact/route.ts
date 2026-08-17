@@ -39,7 +39,33 @@ function sameOrigin(request: Request): boolean {
   }
 
   try {
-    return new URL(origin).host === new URL(request.url).host;
+    const originUrl = new URL(origin);
+
+    const forwardedHost = request.headers
+      .get("x-forwarded-host")
+      ?.split(",")[0]
+      ?.trim();
+
+    const requestHost =
+      forwardedHost || request.headers.get("host");
+
+    if (!requestHost || originUrl.host !== requestHost) {
+      return false;
+    }
+
+    const forwardedProto = request.headers
+      .get("x-forwarded-proto")
+      ?.split(",")[0]
+      ?.trim();
+
+    if (
+      forwardedProto &&
+      originUrl.protocol !== `${forwardedProto}:`
+    ) {
+      return false;
+    }
+
+    return true;
   } catch {
     return false;
   }
