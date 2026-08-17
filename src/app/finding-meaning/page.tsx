@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
@@ -104,6 +105,48 @@ export default function FindingMeaningPage() {
               younger generations.
             </p>
           </RevealSection>
+        </div>
+      </section>
+
+      <section className="bg-ivory pb-20 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="grid gap-6 md:grid-cols-12 md:gap-8">
+            <RevealSection className="md:col-span-4 md:pt-20">
+              <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
+                <Image
+                  src="/images/editorial/journey/temple-water-reflection.webp"
+                  alt="A temple reflected in still water"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 32vw"
+                />
+              </div>
+            </RevealSection>
+
+            <RevealSection delay={1} className="md:col-span-4">
+              <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
+                <Image
+                  src="/images/editorial/journey/woven-circle-landscape.webp"
+                  alt="A landscape viewed through a circular woven frame"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 32vw"
+                />
+              </div>
+            </RevealSection>
+
+            <RevealSection delay={2} className="md:col-span-4 md:pt-32">
+              <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
+                <Image
+                  src="/images/editorial/journey/rice-terraces-overlook.webp"
+                  alt="Green rice terraces across a tropical valley"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 32vw"
+                />
+              </div>
+            </RevealSection>
+          </div>
         </div>
       </section>
 

@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 export default function PodcastPage() {
   return (
     <>
-      <main>
-        {/* Editorial hero */}
+      {/* Editorial hero */}
         <section className="border-b border-stone/15 bg-ivory pb-20 pt-32 lg:pb-28 lg:pt-44">
           <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
             <div className="grid gap-14 lg:grid-cols-12 lg:items-end lg:gap-16">
@@ -107,8 +106,6 @@ export default function PodcastPage() {
             </div>
           </div>
         </section>
-      </main>
-
       <FinalCTA heading="Turn experience into something meaningful." />
     </>
   );

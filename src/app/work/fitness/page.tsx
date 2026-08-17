@@ -15,11 +15,11 @@ export default function FitnessPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
-          src="/images/editorial/wellness.webp"
-          alt="Fitness and movement"
+          src="/images/editorial/journey/tropical-garden-sunlight.webp"
+          alt="Sunlight filtering through a tropical garden"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[center_45%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-ink/50" />

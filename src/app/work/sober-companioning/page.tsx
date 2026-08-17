@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
@@ -40,6 +41,15 @@ export default function SoberCompanioningPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink pb-20 pt-40 text-ivory lg:pb-28 lg:pt-52">
+        <Image
+          src="/images/editorial/journey/tropical-palm-valley.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ink/[0.76]" aria-hidden="true" />
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden="true"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
@@ -81,6 +82,32 @@ export default function InterventionsPage() {
             <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory/50 sm:text-[10px]">
               Clarity / Compassion / Connection
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ivory py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <RevealSection className="lg:col-span-5">
+              <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
+                <Image
+                  src="/images/editorial/journey/carved-doorway-transition.webp"
+                  alt="An open carved doorway leading into a garden"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+            </RevealSection>
+
+            <RevealSection delay={1} className="lg:col-span-5 lg:col-start-7">
+              <p className="text-eyebrow mb-6">Creating an Opening</p>
+              <p className="font-serif text-[clamp(2.25rem,4vw,4.25rem)] leading-[1.02] tracking-[-0.03em] text-ink">
+                A different direction can begin with one clear, compassionate
+                opening.
+              </p>
+            </RevealSection>
           </div>
         </div>
       </section>

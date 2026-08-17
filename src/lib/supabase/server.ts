@@ -3,11 +3,14 @@ import "server-only";
 import { createClient } from "@supabase/supabase-js";
 
 export function createServerSupabaseClient() {
-  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseUrl =
+    process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
 
   if (!supabaseUrl) {
-    throw new Error("SUPABASE_URL is not configured.");
+    throw new Error(
+      "SUPABASE_URL or NEXT_PUBLIC_SUPABASE_URL is not configured.",
+    );
   }
 
   if (!supabaseSecretKey) {

@@ -147,8 +147,8 @@ export default function AboutPage() {
                 <RevealSection delay={2}>
                   <div className="aspect-[16/9] relative img-hover-scale my-16">
                     <Image
-                      src="/images/editorial/wellness.webp"
-                      alt="Movement and structure"
+                      src="/images/editorial/journey/rice-terraces-red-foliage.webp"
+                      alt="Rice terraces framed by red tropical foliage"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 58vw"

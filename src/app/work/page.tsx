@@ -5,7 +5,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 
 export const metadata: Metadata = {
-  title: "Work | Joey Rubino",
+  title: "Work",
   description:
     "Explore Joey Rubino's work across sober companioning, fitness and transformation, and interventions.",
 };
@@ -40,8 +40,7 @@ const services = [
 export default function WorkPage() {
   return (
     <>
-      <main>
-        {/* HERO */}
+      {/* HERO */}
         <section className="relative overflow-hidden border-b border-stone/20 bg-ivory pb-14 pt-24 lg:min-h-[560px] lg:pb-16 lg:pt-28">
 
           {/* Warm editorial background */}
@@ -240,8 +239,6 @@ export default function WorkPage() {
             </div>
           </div>
         </section>
-      </main>
-
       <FinalCTA heading="Start with a conversation about what comes next." compact />
     </>
   );
