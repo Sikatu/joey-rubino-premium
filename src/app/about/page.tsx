@@ -24,7 +24,7 @@ export default function AboutPage() {
                 About Joey
               </p>
 
-              <h1 className="font-serif text-[clamp(3.35rem,10vw,4.9rem)] leading-[0.93] tracking-[-0.04em] text-ivory lg:text-[clamp(4rem,4.25vw,5.15rem)] lg:leading-[0.92]">
+              <h1 className="font-serif text-[clamp(2.85rem,calc(13.7vw+0.11rem),3.35rem)] leading-[0.93] tracking-[-0.04em] text-ivory lg:text-[clamp(4rem,4.25vw,5.15rem)] lg:leading-[0.92]">
                 <span className="block xl:whitespace-nowrap">
                   Experience shaped
                 </span>
