@@ -70,7 +70,7 @@ export default function FitnessPage() {
           <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-ivory/[0.05] lg:block" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="relative site-shell w-full">
           <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <RevealSection>
@@ -113,7 +113,7 @@ export default function FitnessPage() {
 
       {/* 02 - APPROACH */}
       <section className="bg-ivory py-20 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <RevealSection>
@@ -153,7 +153,7 @@ export default function FitnessPage() {
 
       {/* 03 - FOCUS AREAS */}
       <section className="bg-alabaster py-20 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <RevealSection>
             <div className="mb-14 flex flex-col gap-5 border-b border-stone/20 pb-8 md:flex-row md:items-end md:justify-between">
               <div>

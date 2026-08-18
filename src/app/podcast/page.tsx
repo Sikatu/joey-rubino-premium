@@ -18,7 +18,7 @@ export default function PodcastPage() {
     <>
       {/* Editorial hero */}
         <section className="border-b border-stone/15 bg-ivory pb-20 pt-32 lg:pb-28 lg:pt-44">
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="site-shell">
             <div className="grid gap-14 lg:grid-cols-12 lg:items-end lg:gap-16">
               <div className="lg:col-span-7">
                 <RevealSection>
@@ -57,7 +57,7 @@ export default function PodcastPage() {
 
         {/* Episode state */}
         <section className="bg-ink py-24 text-ivory lg:py-36">
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="site-shell">
             <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4">
                 <RevealSection>

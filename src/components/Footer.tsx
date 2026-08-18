@@ -20,7 +20,7 @@ const workLinks = [
 export function Footer() {
   return (
     <footer className="bg-ink text-ivory">
-      <div className="mx-auto max-w-7xl px-6 pb-[calc(4.5rem+env(safe-area-inset-bottom))] pt-12 lg:px-12 lg:pb-8 lg:pt-14 xl:px-20">
+      <div className="site-shell pb-[calc(4.5rem+env(safe-area-inset-bottom))] pt-12 lg:pb-8 lg:pt-14">
         {/* Closing statement */}
         <div className="grid gap-9 border-b border-ivory/10 pb-10 lg:grid-cols-12 lg:items-end lg:gap-12 lg:pb-12">
           <div className="lg:col-span-6">

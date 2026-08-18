@@ -16,7 +16,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-ink text-ivory">
 
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-36 lg:px-12 lg:pb-24 lg:pt-40 xl:px-20">
+        <div className="relative z-10 site-shell pb-16 pt-36 lg:pb-24 lg:pt-40">
           <div className="grid gap-14 lg:min-h-[610px] lg:grid-cols-12 lg:items-center lg:gap-8">
             {/* Editorial statement */}
             <div className="lg:col-span-6">
@@ -92,7 +92,7 @@ export default function AboutPage() {
       </section>
       {/* Editorial Bio */}
       <section className="py-24 lg:py-40 bg-ivory">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-y-24 lg:gap-x-16 xl:gap-x-24">
             
             {/* Left Column (Sticky) */}

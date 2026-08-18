@@ -217,6 +217,32 @@ body {
 }
 
 /*
+ * Shared site shell
+ * Owns horizontal centering, content max-width, and responsive gutters only.
+ */
+.site-shell {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 64rem) {
+  .site-shell {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .site-shell {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/*
  * Editorial micro-typography
  * These roles own typography only.
  * Color remains contextual at the usage site.

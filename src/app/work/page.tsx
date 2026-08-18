@@ -38,7 +38,7 @@ export default function WorkPage() {
 
 
           </div>
-          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="relative z-10 site-shell">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-14">
               {/* Editorial statement */}
               <div className="lg:col-span-8">
@@ -93,7 +93,7 @@ export default function WorkPage() {
         </section>
         {/* SERVICE INDEX */}
         <section className="bg-alabaster py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="site-shell">
             <RevealSection>
               <div className="mb-8 flex flex-col gap-5 border-b border-stone/25 pb-8 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
                 <div>
@@ -169,7 +169,7 @@ export default function WorkPage() {
 
         {/* APPROACH */}
         <section className="border-y border-ivory/10 bg-ink py-16 text-ivory lg:py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+          <div className="site-shell">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start lg:gap-12">
               {/* Editorial index */}
               <div className="lg:col-span-3 lg:pt-2">

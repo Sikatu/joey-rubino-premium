@@ -51,7 +51,7 @@ export default function FAQPage() {
   return (
     <>
       <section className="pb-16 pt-32 lg:pb-24 lg:pt-40">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <p className="text-eyebrow mb-4">FAQ</p>
 
           <h1 className="text-display max-w-3xl">

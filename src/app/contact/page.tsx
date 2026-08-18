@@ -173,7 +173,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="pb-16 pt-28 lg:pb-32 lg:pt-40">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
             <div>
               <p className="text-eyebrow mb-4">

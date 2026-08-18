@@ -32,7 +32,7 @@ export function FinalCTA({
         </div>
       )}
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+      <div className="relative site-shell">
         <div
           className={`grid gap-10 lg:grid-cols-12 lg:items-center ${
             compact ? "lg:gap-10" : "lg:gap-14"

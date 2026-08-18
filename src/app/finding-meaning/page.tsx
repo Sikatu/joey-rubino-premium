@@ -47,7 +47,7 @@ export default function FindingMeaningPage() {
           <div className="absolute bottom-0 right-[8%] top-0 hidden w-px bg-ivory/[0.05] lg:block" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="relative site-shell w-full">
           <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <RevealSection>
@@ -109,7 +109,7 @@ export default function FindingMeaningPage() {
       </section>
 
       <section className="bg-ivory pb-20 lg:pb-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-6 md:grid-cols-12 md:gap-8">
             <RevealSection className="md:col-span-4 md:pt-20">
               <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
@@ -191,7 +191,7 @@ export default function FindingMeaningPage() {
       </section>
 
       <section className="bg-ivory py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-10 border-t border-stone/20 pt-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
               <RevealSection>

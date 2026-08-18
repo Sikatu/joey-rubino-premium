@@ -15,7 +15,7 @@ export function ServiceNavigation({
 }: ServiceNavigationProps) {
   return (
     <section className="border-y border-ivory/10 bg-ink py-16 text-ivory sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+      <div className="site-shell">
         <RevealSection>
           <div className="mb-10 flex flex-col gap-6 border-b border-ivory/15 pb-7 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
             <div>

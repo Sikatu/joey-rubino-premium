@@ -47,7 +47,7 @@ export default function InterventionsPage() {
           <div className="absolute right-[12%] top-[22%] hidden h-[180px] w-px bg-ivory/[0.06] lg:block" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="relative site-shell w-full">
           <RevealSection>
             <p className="mb-8 text-hero-kicker text-bronze-soft">
               Interventions
@@ -88,7 +88,7 @@ export default function InterventionsPage() {
       </section>
 
       <section className="bg-ivory py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <RevealSection className="lg:col-span-5">
               <div className="relative aspect-[3/4] overflow-hidden bg-alabaster">
@@ -114,7 +114,7 @@ export default function InterventionsPage() {
       </section>
 
       <section className="bg-ivory py-24 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <RevealSection>
@@ -150,7 +150,7 @@ export default function InterventionsPage() {
       </section>
 
       <section className="bg-alabaster py-24 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <RevealSection>
             <div className="mb-14 border-b border-stone/20 pb-8">
               <p className="text-eyebrow mb-5">What the Work Centers On</p>
@@ -192,7 +192,7 @@ export default function InterventionsPage() {
       </section>
 
       <section className="bg-olive py-24 text-ivory lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <RevealSection>

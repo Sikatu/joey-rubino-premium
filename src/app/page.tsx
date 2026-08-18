@@ -183,7 +183,7 @@ export default function HomePage() {
 
       {/* 02 - SERVICES */}
       <section className="border-t border-ivory/10 bg-ink py-20 text-ivory sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <RevealSection>
             <div className="mb-10 grid gap-7 border-b border-ivory/15 pb-9 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-7">
@@ -267,7 +267,7 @@ export default function HomePage() {
 
       {/* 03 - WHY JOEY */}
       <section className="bg-ivory py-20 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-5">
               <RevealSection>
@@ -369,7 +369,7 @@ export default function HomePage() {
 
       {/* 04 - HOW SUPPORT WORKS */}
       <section className="bg-alabaster py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
               <RevealSection>
@@ -438,7 +438,7 @@ export default function HomePage() {
 
       {/* 05 - FINDING MEANING */}
       <section className="overflow-hidden bg-olive py-20 text-ivory sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="lg:col-span-8">
               <RevealSection>
@@ -520,7 +520,7 @@ export default function HomePage() {
 
       {/* 06 - FAQ */}
       <section className="bg-ivory py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
+        <div className="site-shell">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
               <RevealSection>
