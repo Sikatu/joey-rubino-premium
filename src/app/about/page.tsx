@@ -93,7 +93,7 @@ export default function AboutPage() {
       {/* Editorial Bio */}
       <section className="py-24 lg:py-40 bg-ivory">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-y-24 lg:gap-x-16 xl:gap-x-24">
             
             {/* Left Column (Sticky) */}
             <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
