@@ -217,7 +217,7 @@ export function MobileNav({
                         className={`mt-1 shrink-0 font-sans text-[9px] tracking-[0.14em] ${
                           active
                             ? "text-bronze-soft"
-                            : "text-ivory/35"
+                            : "text-ivory/50"
                         }`}
                       >
                         {link.number}
@@ -235,7 +235,7 @@ export function MobileNav({
                     </span>
 
                     <span
-                      className="shrink-0 pb-1 font-serif text-xl text-ivory/35 transition-[color,transform] duration-500 group-hover:translate-x-1 group-hover:text-ivory"
+                      className="shrink-0 pb-1 font-serif text-xl text-ivory/50 transition-[color,transform] duration-500 group-hover:translate-x-1 group-hover:text-ivory"
                       aria-hidden="true"
                     >
                       →
@@ -276,14 +276,14 @@ export function MobileNav({
                       className={`font-sans text-[9px] tracking-[0.14em] ${
                         active
                           ? "text-bronze-soft"
-                          : "text-ivory/35"
+                          : "text-ivory/50"
                       }`}
                     >
                       {link.number}
                     </span>
 
                     <span>
-                      <span className="block font-sans text-[9px] tracking-[0.14em] uppercase text-ivory/40">
+                      <span className="block font-sans text-[9px] tracking-[0.14em] uppercase text-ivory/50">
                         {link.eyebrow}
                       </span>
 
@@ -299,7 +299,7 @@ export function MobileNav({
                     </span>
 
                     <span
-                      className="font-serif text-lg text-ivory/35 transition-[color,transform] duration-500 group-hover:translate-x-1 group-hover:text-ivory"
+                      className="font-serif text-lg text-ivory/50 transition-[color,transform] duration-500 group-hover:translate-x-1 group-hover:text-ivory"
                       aria-hidden="true"
                     >
                       →
@@ -327,7 +327,7 @@ export function MobileNav({
             </span>
           </Link>
 
-          <p className="mt-4 text-center font-sans text-[9px] tracking-[0.16em] uppercase text-ivory/35">
+          <p className="mt-4 text-center font-sans text-[9px] tracking-[0.16em] uppercase text-ivory/50">
             Private. Personal. No pressure.
           </p>
         </div>

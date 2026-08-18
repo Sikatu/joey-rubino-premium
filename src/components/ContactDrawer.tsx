@@ -147,7 +147,7 @@ export function ContactDrawer({ open, onClose }: ContactDrawerProps) {
 
         {/* Bottom reassurance */}
         <div className="px-12 pb-10">
-          <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-stone">
+          <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-ink/65">
             Private. Personal. No pressure.
           </p>
         </div>

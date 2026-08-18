@@ -169,11 +169,11 @@ export function Footer() {
 
         {/* Colophon */}
         <div className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-[10px] tracking-[0.03em] text-ivory/45">
+          <p className="font-sans text-[10px] tracking-[0.03em] text-ivory/50">
             © {new Date().getFullYear()} Joey Rubino. All rights reserved.
           </p>
 
-          <p className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/38">
+          <p className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/50">
             Private. Personal. No pressure.
           </p>
         </div>

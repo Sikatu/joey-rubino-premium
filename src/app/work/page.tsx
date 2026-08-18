@@ -97,7 +97,7 @@ export default function WorkPage() {
             <RevealSection>
               <div className="mb-8 flex flex-col gap-5 border-b border-stone/25 pb-8 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                  <p className="text-eyebrow mb-5">
+                  <p className="text-eyebrow mb-5 text-[#7E684C]!">
                     Areas of Work
                   </p>
 
@@ -126,7 +126,7 @@ export default function WorkPage() {
 
                     <div className="grid grid-cols-1 gap-7 lg:grid-cols-12 lg:items-center lg:gap-8">
                       <div className="lg:col-span-1">
-                        <span className="font-serif text-[1.7rem] leading-none text-stone/75 transition-colors duration-300 group-hover:text-bronze-deep group-focus-visible:text-bronze-deep motion-reduce:transition-none">
+                        <span className="font-serif text-[1.7rem] leading-none text-bronze-deep transition-colors duration-300 group-hover:text-bronze-deep group-focus-visible:text-bronze-deep motion-reduce:transition-none">
                           {service.number}
                         </span>
                       </div>

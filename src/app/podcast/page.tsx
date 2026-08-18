@@ -72,7 +72,7 @@ export default function PodcastPage() {
                     </p>
                   </div>
 
-                  <p className="mt-7 max-w-xs font-sans text-[10px] leading-[1.7] tracking-[0.12em] uppercase text-ivory/40">
+                  <p className="mt-7 max-w-xs font-sans text-[10px] leading-[1.7] tracking-[0.12em] uppercase text-ivory/50">
                     Updates will be added when episode information is confirmed.
                   </p>
                 </RevealSection>
