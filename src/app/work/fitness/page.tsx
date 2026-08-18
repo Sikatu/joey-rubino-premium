@@ -74,7 +74,7 @@ export default function FitnessPage() {
           <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <RevealSection>
-                <p className="mb-6 font-sans text-[10px] tracking-[0.3em] uppercase text-bronze-soft sm:text-[11px]">
+                <p className="mb-6 text-hero-kicker text-bronze-soft">
                   Fitness &amp; Transformation
                 </p>
               </RevealSection>
@@ -182,7 +182,7 @@ export default function FitnessPage() {
                 delay={Math.min(index + 1, 4)}
               >
                 <div className="border-b border-stone/20 py-9 md:min-h-[225px] md:border-r md:px-8 md:odd:pl-0 md:even:border-r-0 md:even:pr-0 lg:py-12">
-                  <p className="mb-8 font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
+                  <p className="mb-8 text-step-index text-bronze-deep">
                     {item.number}
                   </p>
 

@@ -218,7 +218,7 @@ export default function HomePage() {
                   className="group grid gap-6 border-b border-ivory/15 py-9 transition-colors duration-300 hover:border-ivory/35 focus-visible:border-ivory/35 md:grid-cols-12 md:items-center lg:py-11"
                 >
                   <div className="md:col-span-1">
-                    <span className="font-sans text-[10px] tracking-[0.2em] text-ivory/60">
+                    <span className="text-step-index text-ivory/60">
                       {service.number}
                     </span>
                   </div>
@@ -406,7 +406,7 @@ export default function HomePage() {
                     delay={Math.min(index + 1, 3)}
                   >
                     <div className="grid gap-5 border-b border-stone/25 py-8 sm:grid-cols-[52px_1fr] lg:py-10">
-                      <p className="font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
+                      <p className="text-step-index text-bronze-deep">
                         {step.number}
                       </p>
 

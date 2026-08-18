@@ -49,7 +49,7 @@ export default function InterventionsPage() {
 
         <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-20">
           <RevealSection>
-            <p className="mb-8 font-sans text-[10px] tracking-[0.3em] uppercase text-bronze-soft sm:text-[11px]">
+            <p className="mb-8 text-hero-kicker text-bronze-soft">
               Interventions
             </p>
           </RevealSection>
@@ -168,7 +168,7 @@ export default function InterventionsPage() {
               <RevealSection key={item.number} delay={index + 1}>
                 <div className="grid gap-7 border-b border-stone/20 py-10 md:grid-cols-12 md:items-start lg:py-12">
                   <div className="md:col-span-1">
-                    <p className="font-sans text-[10px] tracking-[0.2em] text-bronze-deep">
+                    <p className="text-step-index text-bronze-deep">
                       {item.number}
                     </p>
                   </div>

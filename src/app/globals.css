@@ -216,6 +216,30 @@ body {
   text-transform: uppercase;
 }
 
+/*
+ * Editorial micro-typography
+ * These roles own typography only.
+ * Color remains contextual at the usage site.
+ */
+.text-step-index {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+}
+
+.text-hero-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .text-hero-kicker {
+    font-size: 0.6875rem;
+  }
+}
+
 /* More considered selection treatment */
 ::selection {
   background-color: var(--color-bronze);

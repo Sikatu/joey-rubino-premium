@@ -51,7 +51,7 @@ export default function FindingMeaningPage() {
           <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <RevealSection>
-                <p className="mb-6 font-sans text-[10px] tracking-[0.3em] uppercase text-ivory/50 sm:text-[11px]">
+                <p className="mb-6 text-hero-kicker text-ivory/50">
                   Finding Meaning
                 </p>
               </RevealSection>
