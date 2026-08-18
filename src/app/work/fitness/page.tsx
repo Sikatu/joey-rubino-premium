@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
+import { ServiceNavigation } from "@/components/ServiceNavigation";
 import { RevealSection } from "@/lib/motion";
 
 export const metadata: Metadata = {
@@ -217,6 +218,8 @@ export default function FitnessPage() {
       </section>
 
       {/* 05 - CTA */}
+      <ServiceNavigation currentHref="/work/fitness" />
+
       <FinalCTA heading="Start with a conversation about your goals." />
     </>
   );

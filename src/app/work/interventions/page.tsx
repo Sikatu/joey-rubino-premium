@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
+import { ServiceNavigation } from "@/components/ServiceNavigation";
 import { RevealSection } from "@/lib/motion";
 
 export const metadata: Metadata = {
@@ -227,6 +228,8 @@ export default function InterventionsPage() {
           </div>
         </div>
       </section>
+
+      <ServiceNavigation currentHref="/work/interventions" />
 
       <FinalCTA heading="Begin with a conversation." />
     </>
