@@ -4,29 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { services } from "@/lib/services";
+
 import { ContactDrawer } from "./ContactDrawer";
 import { MobileNav } from "./MobileNav";
 
-const workLinks = [
-  {
-    href: "/work/sober-companioning",
-    number: "01",
-    label: "Sober Companioning",
-    eyebrow: "Recovery Support",
-  },
-  {
-    href: "/work/fitness",
-    number: "02",
-    label: "Fitness & Transformation",
-    eyebrow: "Movement & Structure",
-  },
-  {
-    href: "/work/interventions",
-    number: "03",
-    label: "Interventions",
-    eyebrow: "Conversation & Clarity",
-  },
-];
+const workLinks = services.map((service) => ({
+  href: service.href,
+  number: service.number,
+  label: service.title,
+  eyebrow: service.eyebrow,
+}));
 
 const desktopLinks = [
   { href: "/about", label: "About" },
@@ -61,11 +49,11 @@ export function Header() {
   const workRef = useRef<HTMLDivElement>(null);
   const workButtonRef = useRef<HTMLButtonElement>(null);
   const mobileButtonRef = useRef<HTMLButtonElement>(null);
-  const workTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const lightInitialPage = lightInitialRoutes.has(pathname);
   const darkNavigation = scrolled || (lightInitialPage && pathname !== "/about");
   const workActive = routeIsActive(pathname, "/work");
+  const homeActive = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => {
@@ -114,32 +102,6 @@ export function Header() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [workOpen]);
-
-  useEffect(() => {
-    return () => {
-      if (workTimeout.current) {
-        clearTimeout(workTimeout.current);
-      }
-    };
-  }, []);
-
-  const openWorkMenu = () => {
-    if (workTimeout.current) {
-      clearTimeout(workTimeout.current);
-    }
-
-    setWorkOpen(true);
-  };
-
-  const scheduleWorkMenuClose = () => {
-    if (workTimeout.current) {
-      clearTimeout(workTimeout.current);
-    }
-
-    workTimeout.current = setTimeout(() => {
-      setWorkOpen(false);
-    }, 220);
-  };
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
@@ -217,6 +179,7 @@ export function Header() {
         >
           <Link
             href="/"
+            aria-current={homeActive ? "page" : undefined}
             className={`group relative z-10 font-sans text-[12px] font-normal tracking-[0.24em] uppercase transition-colors duration-500 ${navTextClass}`}
           >
             Joey Rubino
@@ -240,9 +203,6 @@ export function Header() {
             <div
               ref={workRef}
               className="relative"
-              onMouseEnter={openWorkMenu}
-              onMouseLeave={scheduleWorkMenuClose}
-              onFocusCapture={openWorkMenu}
               onBlurCapture={(event) => {
                 const nextTarget = event.relatedTarget as Node | null;
 
@@ -258,12 +218,12 @@ export function Header() {
             >
               <button
                 ref={workButtonRef}
+                id="desktop-work-trigger"
                 type="button"
                 onClick={() =>
                   setWorkOpen((current) => !current)
                 }
                 aria-expanded={workOpen}
-                aria-haspopup="menu"
                 aria-controls="desktop-work-menu"
                 className={`group relative flex items-center gap-1.5 py-3 font-sans text-[11px] tracking-[0.16em] uppercase transition-colors duration-500 ${
                   workActive ? activeTextClass : navTextClass
@@ -308,7 +268,8 @@ export function Header() {
 
               <div
                 id="desktop-work-menu"
-                role="menu"
+                role="group"
+                aria-labelledby="desktop-work-trigger"
                 aria-hidden={!workOpen}
                 className={`absolute left-1/2 top-full w-[470px] -translate-x-1/2 pt-4 transition-[opacity,transform,visibility] duration-500 ${
                   workOpen
@@ -330,7 +291,11 @@ export function Header() {
 
                     <Link
                       href="/work"
-                      role="menuitem"
+                      aria-current={
+                        pathname === "/work"
+                          ? "page"
+                          : undefined
+                      }
                       onClick={() => setWorkOpen(false)}
                       className="group flex items-center gap-2 font-sans text-[9px] tracking-[0.16em] uppercase text-ink"
                     >
@@ -353,7 +318,6 @@ export function Header() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          role="menuitem"
                           aria-current={
                             active ? "page" : undefined
                           }
@@ -405,6 +369,9 @@ export function Header() {
             <button
               type="button"
               onClick={() => setDrawerOpen(true)}
+              aria-expanded={drawerOpen}
+              aria-haspopup="dialog"
+              aria-controls="contact-drawer"
               className={`group ml-2 flex items-center gap-3 border px-5 py-3 font-sans text-[10px] tracking-[0.18em] uppercase transition-[background-color,border-color,color] duration-500 ${talkButtonClass}`}
             >
               Private Conversation
@@ -426,6 +393,7 @@ export function Header() {
             aria-label="Open menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
+            aria-haspopup="dialog"
           >
             <span
               className={`block h-px w-6 transition-[background-color,width] duration-500 ${

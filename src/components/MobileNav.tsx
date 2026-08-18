@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { services } from "@/lib/services";
+
 interface MobileNavProps {
   open: boolean;
   onClose: () => void;
@@ -16,30 +18,17 @@ const mainLinks = [
     href: "/finding-meaning",
     number: "03",
     label: "Finding Meaning",
-  },  { href: "/faq", number: "04", label: "FAQ" },
+  },
+  { href: "/faq", number: "04", label: "FAQ" },
   { href: "/contact", number: "05", label: "Contact" },
 ];
 
-const workLinks = [
-  {
-    href: "/work/sober-companioning",
-    number: "01",
-    label: "Sober Companioning",
-    eyebrow: "Recovery Support",
-  },
-  {
-    href: "/work/fitness",
-    number: "02",
-    label: "Fitness & Transformation",
-    eyebrow: "Movement & Structure",
-  },
-  {
-    href: "/work/interventions",
-    number: "03",
-    label: "Interventions",
-    eyebrow: "Conversation & Clarity",
-  },
-];
+const workLinks = services.map((service) => ({
+  href: service.href,
+  number: service.number,
+  label: service.title,
+  eyebrow: service.eyebrow,
+}));
 
 function routeIsActive(pathname: string, href: string) {
   if (href === "/work") {
@@ -126,7 +115,7 @@ export function MobileNav({
           : "invisible pointer-events-none"
       }`}
       role="dialog"
-      aria-modal="true"
+      aria-modal={open ? true : undefined}
       aria-label="Mobile navigation"
       aria-hidden={!open}
     >
@@ -146,6 +135,9 @@ export function MobileNav({
         <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-ivory/10 px-6">
           <Link
             href="/"
+            aria-current={
+              pathname === "/" ? "page" : undefined
+            }
             onClick={onClose}
             className="font-sans text-[12px] tracking-[0.24em] uppercase text-ivory"
           >
@@ -198,7 +190,9 @@ export function MobileNav({
                     href={link.href}
                     onClick={onClose}
                     aria-current={
-                      active ? "page" : undefined
+                      pathname === link.href
+                        ? "page"
+                        : undefined
                     }
                     className="group flex items-end justify-between gap-6 border-b border-ivory/10 py-5"
                   >
@@ -307,7 +301,7 @@ export function MobileNav({
             onClick={onClose}
             className="group flex w-full items-center justify-between border border-ivory/45 px-5 py-4 font-sans text-[10px] tracking-[0.18em] uppercase text-ivory transition-[background-color,border-color,color] duration-500 hover:border-ivory hover:bg-ivory hover:text-ink"
           >
-            Start a Conversation
+            Start a Private Conversation
 
             <span
               className="transition-transform duration-500 group-hover:translate-x-1"

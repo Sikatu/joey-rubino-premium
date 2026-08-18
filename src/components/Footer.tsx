@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { services } from "@/lib/services";
+
 const navigateLinks = [
   { href: "/about", label: "About" },
   { href: "/finding-meaning", label: "Finding Meaning" },
@@ -9,18 +11,10 @@ const navigateLinks = [
 
 const workLinks = [
   { href: "/work", label: "Overview" },
-  {
-    href: "/work/sober-companioning",
-    label: "Sober Companioning",
-  },
-  {
-    href: "/work/fitness",
-    label: "Fitness & Transformation",
-  },
-  {
-    href: "/work/interventions",
-    label: "Interventions",
-  },
+  ...services.map((service) => ({
+    href: service.href,
+    label: service.title,
+  })),
 ];
 
 export function Footer() {
@@ -98,18 +92,20 @@ export function Footer() {
               Work
             </p>
 
-            <ul className="space-y-3">
-              {workLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-sans text-[13px] leading-relaxed text-ivory/68 transition-colors duration-300 hover:text-ivory"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <nav aria-label="Footer work navigation">
+              <ul className="space-y-3">
+                {workLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="font-sans text-[13px] leading-relaxed text-ivory/68 transition-colors duration-300 hover:text-ivory"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <div className="col-span-2 border-t border-ivory/10 pt-8 lg:col-span-3 lg:col-start-10 lg:border-t-0 lg:pt-0">

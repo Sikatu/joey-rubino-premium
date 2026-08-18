@@ -61,12 +61,14 @@ export function ContactDrawer({ open, onClose }: ContactDrawerProps) {
 
   return (
     <div
+      id="contact-drawer"
       className={`fixed inset-0 z-[70] transition-all duration-500 hidden lg:block ${
         open ? "visible" : "invisible"
       }`}
       role="dialog"
-      aria-modal="true"
+      aria-modal={open ? true : undefined}
       aria-label="Contact drawer"
+      aria-hidden={!open}
     >
       {/* Overlay */}
       <div
@@ -74,6 +76,7 @@ export function ContactDrawer({ open, onClose }: ContactDrawerProps) {
           open ? "opacity-100" : "opacity-0"
         }`}
         onClick={onClose}
+        aria-hidden="true"
       />
 
       {/* Drawer Panel */}
