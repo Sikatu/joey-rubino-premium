@@ -115,9 +115,7 @@ export function Header() {
 
   const activeTextClass = darkNavigation
     ? "text-bronze-deep"
-    : pathname === "/about"
-      ? "text-ivory"
-      : "text-bronze-soft";
+    : "text-ivory";
 
   const headerSurfaceClass = scrolled
     ? "bg-ivory/95 shadow-[0_1px_0_rgba(172,162,148,0.22)] backdrop-blur-md"
