@@ -67,7 +67,7 @@ export function Footer() {
         {/* Compact directory */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-9 border-b border-ivory/10 py-10 lg:grid-cols-12 lg:gap-8 lg:py-11">
           <div className="lg:col-span-3">
-            <p className="mb-5 font-sans text-[9px] tracking-[0.2em] uppercase text-bronze-soft">
+            <p className="mb-5 text-footer-heading">
               Navigate
             </p>
 
@@ -88,7 +88,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4 lg:col-start-4">
-            <p className="mb-5 font-sans text-[9px] tracking-[0.2em] uppercase text-bronze-soft">
+            <p className="mb-5 text-footer-heading">
               Work
             </p>
 
@@ -109,7 +109,7 @@ export function Footer() {
           </div>
 
           <div className="col-span-2 border-t border-ivory/10 pt-8 lg:col-span-3 lg:col-start-10 lg:border-t-0 lg:pt-0">
-            <p className="mb-5 font-sans text-[9px] tracking-[0.2em] uppercase text-bronze-soft">
+            <p className="mb-5 text-footer-heading">
               Contact
             </p>
 

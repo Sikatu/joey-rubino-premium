@@ -273,7 +273,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="mb-2 block font-sans text-[10px] tracking-[0.16em] uppercase text-bronze-deep"
+                        className="mb-2 block text-field-label"
                       >
                         Name
                       </label>
@@ -309,7 +309,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="mb-2 block font-sans text-[10px] tracking-[0.16em] uppercase text-bronze-deep"
+                        className="mb-2 block text-field-label"
                       >
                         Email
                       </label>
@@ -345,7 +345,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="contact-phone"
-                        className="mb-2 block font-sans text-[10px] tracking-[0.16em] uppercase text-bronze-deep"
+                        className="mb-2 block text-field-label"
                       >
                         Phone (optional)
                       </label>
@@ -366,7 +366,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="contact-subject"
-                        className="mb-2 block font-sans text-[10px] tracking-[0.16em] uppercase text-bronze-deep"
+                        className="mb-2 block text-field-label"
                       >
                         Subject
                       </label>
@@ -430,7 +430,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="contact-message"
-                        className="mb-2 block font-sans text-[10px] tracking-[0.16em] uppercase text-bronze-deep"
+                        className="mb-2 block text-field-label"
                       >
                         Message
                       </label>
