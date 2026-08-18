@@ -46,11 +46,27 @@ export function MobileNav({
 
   const menuRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (open && closeRef.current) {
-      closeRef.current.focus();
+    if (open) {
+      const activeElement = document.activeElement;
+
+      triggerRef.current =
+        activeElement instanceof HTMLElement
+          ? activeElement
+          : null;
+
+      const focusTimer = window.setTimeout(() => {
+        closeRef.current?.focus();
+      }, 100);
+
+      return () => {
+        window.clearTimeout(focusTimer);
+      };
     }
+
+    triggerRef.current?.focus();
   }, [open]);
 
   useEffect(() => {

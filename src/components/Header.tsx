@@ -369,7 +369,6 @@ export function Header() {
               onClick={() => setDrawerOpen(true)}
               aria-expanded={drawerOpen}
               aria-haspopup="dialog"
-              aria-controls="contact-drawer"
               className={`group ml-2 flex items-center gap-3 border px-5 py-3 font-sans text-[10px] tracking-[0.18em] uppercase transition-[background-color,border-color,color] duration-500 ${talkButtonClass}`}
             >
               Private Conversation
@@ -390,7 +389,6 @@ export function Header() {
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
             aria-expanded={mobileOpen}
-            aria-controls="mobile-navigation"
             aria-haspopup="dialog"
           >
             <span

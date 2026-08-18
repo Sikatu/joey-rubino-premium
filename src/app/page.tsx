@@ -477,6 +477,7 @@ export default function HomePage() {
 
           <div
             className="mt-16 grid grid-cols-2 border-t border-ivory/20 md:mt-20 md:grid-cols-4"
+            role="group"
             aria-label="Finding Meaning focus areas"
           >
             {[
