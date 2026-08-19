@@ -29,7 +29,7 @@ export default function PodcastPage() {
                   <h1 className="text-display max-w-[900px] text-ink">
                     Finding Meaning
                     <br />
-                    <span className="text-stone">
+                    <span className="text-[#8E8477]">
                       The Podcast
                     </span>
                   </h1>
