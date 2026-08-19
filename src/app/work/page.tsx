@@ -97,7 +97,7 @@ export default function WorkPage() {
             <RevealSection>
               <div className="mb-8 flex flex-col gap-5 border-b border-stone/25 pb-8 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                  <p className="text-eyebrow mb-5 text-[#7E684C]!">
+                  <p className="text-eyebrow mb-5">
                     Areas of Work
                   </p>
 

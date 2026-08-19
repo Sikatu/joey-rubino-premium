@@ -177,7 +177,7 @@ export default function FindingMeaningPage() {
       <section className="bg-olive py-24 lg:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-12">
           <RevealSection>
-            <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-bronze-soft">
+            <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#B7A07F]">
               The Purpose
             </p>
 

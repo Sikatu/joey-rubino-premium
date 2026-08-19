@@ -149,7 +149,7 @@ body {
 :root {
   --color-body: #746c63;
   --color-bronze-soft: #b39b79;
-  --color-bronze-deep: #806a4e;
+  --color-bronze-deep: #7e684c;
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-luxury-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }

@@ -46,7 +46,7 @@ export function FinalCTA({
                   aria-hidden="true"
                 />
 
-                <p className="text-eyebrow text-bronze">
+                <p className="text-eyebrow">
                   A Private Conversation
                 </p>
               </div>
@@ -72,7 +72,7 @@ export function FinalCTA({
           >
             <RevealSection delay={1}>
               <div className="border-t border-stone/30 pt-6">
-                <p className="mb-5 max-w-sm font-sans text-[10px] leading-[1.7] tracking-[0.16em] uppercase text-stone">
+                <p className="mb-5 max-w-sm font-sans text-[10px] leading-[1.7] tracking-[0.16em] uppercase text-ink/65">
                   Private. Personal. No pressure.
                 </p>
 
