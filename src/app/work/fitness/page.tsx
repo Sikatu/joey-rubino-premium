@@ -67,14 +67,22 @@ export default function FitnessPage() {
       />
       {/* 01 - HERO */}
       <section className="relative overflow-hidden bg-ink pb-20 pt-40 text-ivory lg:pb-28 lg:pt-52">
-        <Image
-          src="/images/editorial/journey/tropical-garden-sunlight.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover object-[center_45%]"
-          sizes="100vw"
-        />
+                <picture className="absolute inset-0 block">
+          <source
+            media="(max-width: 639px)"
+            srcSet="/images/editorial/journey/tropical-garden-sunlight-mobile.webp"
+            type="image/webp"
+          />
+          <Image
+            src="/images/editorial/journey/tropical-garden-sunlight.webp"
+            alt=""
+            fill
+            loading="eager"
+            fetchPriority="high"
+            className="object-cover object-[center_45%]"
+            sizes="100vw"
+          />
+        </picture>
 
         <div
           className="absolute inset-0 bg-ink/[0.74]"
