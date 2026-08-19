@@ -142,6 +142,10 @@ const sections = [
           technical request information as part of operating and
           protecting the website.
         </p>
+
+        <p>
+          Cloudflare Turnstile is used on the Contact form to help detect and prevent automated abuse. When Turnstile runs, Cloudflare may process technical signals associated with the visitor and the website, including examples such as IP address, TLS fingerprint, user-agent information, the Turnstile sitekey, and the associated website origin. Cloudflare processes these signals for bot detection and security and may also process Turnstile signals to improve its bot-detection capabilities. More information is available in Cloudflare&apos;s Turnstile Privacy Addendum.
+        </p>
       </>
     ),
   },
