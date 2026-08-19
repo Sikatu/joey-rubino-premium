@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { verifyTurnstileToken } from "@/lib/server/turnstile";
 
 const MAX_BODY_BYTES = 16_384;
 
@@ -140,6 +141,10 @@ export async function POST(request: Request) {
     const phone = stringValue(body.phone);
     const subject = stringValue(body.subject);
     const message = stringValue(body.message);
+    const turnstileToken = stringValue(
+      (body as ContactPayload & { turnstileToken?: unknown })
+        .turnstileToken,
+    );
 
     if (!name || name.length > 120) {
       return NextResponse.json(
@@ -177,6 +182,26 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: "Please enter a message of up to 5,000 characters." },
         { status: 400 },
+      );
+    }
+
+    const turnstile =
+      await verifyTurnstileToken(turnstileToken);
+
+    if (!turnstile.ok) {
+      const temporarilyUnavailable =
+        turnstile.reason === "configuration" ||
+        turnstile.reason === "unavailable";
+
+      return NextResponse.json(
+        {
+          error: temporarilyUnavailable
+            ? "Security verification is temporarily unavailable. Please try again."
+            : "Security verification failed. Please try again.",
+        },
+        {
+          status: temporarilyUnavailable ? 503 : 403,
+        },
       );
     }
 

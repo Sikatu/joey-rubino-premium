@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/Button";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { RevealSection } from "@/lib/motion";
 
 interface FormData {
@@ -43,6 +44,14 @@ export default function ContactPage() {
 
   const [serverError, setServerError] = useState("");
   const [startedAt] = useState(() => Date.now());
+
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+
+  const resetTurnstile = () => {
+    setTurnstileToken("");
+    setTurnstileResetKey((value) => value + 1);
+  };
 
   const firstInvalidFieldRef =
     useRef<keyof FormErrors | null>(null);
@@ -138,6 +147,14 @@ export default function ContactPage() {
       return;
     }
 
+    if (!turnstileToken) {
+      setStatus("error");
+      setServerError(
+        "Please complete the security verification.",
+      );
+      return;
+    }
+
     setStatus("loading");
     setServerError("");
 
@@ -155,6 +172,7 @@ export default function ContactPage() {
           message: form.message,
           website: form.website,
           startedAt,
+          turnstileToken,
         }),
       });
 
@@ -173,6 +191,7 @@ export default function ContactPage() {
           result?.error ??
             "Your message could not be sent right now. Please try again.",
         );
+        resetTurnstile();
         return;
       }
 
@@ -182,6 +201,7 @@ export default function ContactPage() {
       setServerError(
         "Your message could not be sent right now. Please try again.",
       );
+      resetTurnstile();
     }
   };
 
@@ -538,6 +558,11 @@ export default function ContactPage() {
                       </div>
                     )}
 
+                                        <TurnstileWidget
+                                          onTokenChange={setTurnstileToken}
+                                          resetKey={turnstileResetKey}
+                                        />
+
                                         <p className="max-w-2xl font-sans text-[12px] leading-[1.75] text-body/65">
                       Please share only what is needed for your inquiry. Avoid
                       including medical records, financial account information,
@@ -555,7 +580,7 @@ export default function ContactPage() {
 <Button
                       type="submit"
                       variant="primary"
-                      disabled={status === "loading"}
+                      disabled={status === "loading" || !turnstileToken}
                       className="min-h-[54px] w-full sm:max-w-[240px] disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {status === "loading"

@@ -2,7 +2,7 @@
 
 export function MobileContactBar() {
   return (
-    <div
+    <nav aria-label="Contact actions"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-stone/20 bg-ivory/95 backdrop-blur-md lg:hidden"
       style={{
         paddingBottom: "env(safe-area-inset-bottom)",
@@ -60,6 +60,6 @@ export function MobileContactBar() {
           Email
         </a>
       </div>
-    </div>
+    </nav>
   );
 }
