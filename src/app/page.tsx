@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,6 +17,14 @@ export const metadata = createPageMetadata({
   twitterDescription:
     "Private sober companioning, interventions, fitness coaching, and recovery support.",
 });
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://joeyrubinorehab.com/#website",
+  name: "Joey Rubino",
+  url: "https://joeyrubinorehab.com/",
+} as const;
 
 const services = [
   {
@@ -68,6 +77,12 @@ const processSteps = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(websiteJsonLd),
+        }}
+      />
       {/* 01 - HERO */}
       <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink text-ivory">
         <div

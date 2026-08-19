@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -11,9 +12,33 @@ export const metadata: Metadata = createPageMetadata({
     "Joey Rubino's journey of recovery, and his path to becoming a sober companion, coach, and guide based in Los Angeles.",
 });
 
+const profilePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://joeyrubinorehab.com/about#profile-page",
+  url: "https://joeyrubinorehab.com/about",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://joeyrubinorehab.com/about#joey-rubino",
+    name: "Joey Rubino",
+    image:
+      "https://joeyrubinorehab.com/images/joey/portrait.webp",
+    sameAs: [
+      "https://www.instagram.com/joeyrubino1/",
+      "https://twitter.com/joeyrubino?lang=en",
+    ],
+  },
+} as const;
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(profilePageJsonLd),
+        }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink text-ivory">
 
