@@ -1,13 +1,15 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/about",
   title: "About",
   description:
     "Joey Rubino's journey of recovery, and his path to becoming a sober companion, coach, and guide based in Los Angeles.",
-};
+});
 
 export default function AboutPage() {
   return (

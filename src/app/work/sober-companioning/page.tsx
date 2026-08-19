@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -5,11 +6,12 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { ServiceNavigation } from "@/components/ServiceNavigation";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/work/sober-companioning",
   title: "Sober Companioning",
   description:
     "Real-world recovery support centered on presence, structure, accountability, and discretion with Joey Rubino.",
-};
+});
 
 const focusAreas = [
   {

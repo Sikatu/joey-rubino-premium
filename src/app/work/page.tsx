@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -5,11 +6,12 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 import { services } from "@/lib/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/work",
   title: "Work",
   description:
     "Explore Joey Rubino's work across sober companioning, fitness and transformation, and interventions.",
-};
+});
 
 export default function WorkPage() {
   return (

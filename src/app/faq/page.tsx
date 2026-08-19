@@ -1,13 +1,15 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Accordion } from "@/components/Accordion";
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/faq",
   title: "Frequently Asked Questions",
   description:
     "Common questions about Joey Rubino's work across sober companioning, fitness and transformation, interventions, and how to get started.",
-};
+});
 
 const faqItems = [
   {

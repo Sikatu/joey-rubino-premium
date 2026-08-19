@@ -1,14 +1,16 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/finding-meaning",
   title: "Finding Meaning",
   description:
     "Finding Meaning brings together recovery education, awareness, speaking, podcasting, and outreach.",
-};
+});
 
 const focusAreas = [
   {

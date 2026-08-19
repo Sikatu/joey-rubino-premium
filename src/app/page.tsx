@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,6 +6,16 @@ import { Accordion } from "@/components/Accordion";
 import { Button } from "@/components/Button";
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
+
+export const metadata = createPageMetadata({
+  path: "/",
+  description:
+    "Private sober companioning, interventions, fitness coaching, and recovery support with Joey Rubino in Los Angeles. Personal, discreet, and grounded in real-world accountability.",
+  openGraphDescription:
+    "Private sober companioning, interventions, fitness coaching, and recovery support with Joey Rubino in Los Angeles.",
+  twitterDescription:
+    "Private sober companioning, interventions, fitness coaching, and recovery support.",
+});
 
 const services = [
   {

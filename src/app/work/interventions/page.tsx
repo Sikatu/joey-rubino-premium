@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -5,11 +6,12 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { ServiceNavigation } from "@/components/ServiceNavigation";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/work/interventions",
   title: "Interventions",
   description:
     "A compassionate and structured approach to difficult conversations around addiction, clarity, connection, and recovery.",
-};
+});
 
 const principles = [
   {

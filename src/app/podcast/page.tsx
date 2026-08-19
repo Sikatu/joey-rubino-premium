@@ -1,9 +1,11 @@
+import { createPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 import { FinalCTA } from "@/components/FinalCTA";
 import { RevealSection } from "@/lib/motion";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/podcast",
   title: "Podcast",
   description:
     "Finding Meaning podcast information and future episode updates.",
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
-};
+});
 
 export default function PodcastPage() {
   return (
