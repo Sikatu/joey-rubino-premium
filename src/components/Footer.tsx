@@ -181,6 +181,18 @@ export function Footer() {
               Privacy
             </Link>
 
+              <span
+                className="h-3 w-px bg-ivory/15"
+                aria-hidden="true"
+              />
+
+              <Link
+                href="/terms"
+                className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/55 transition-colors duration-300 hover:text-ivory"
+              >
+                Terms
+              </Link>
+
             <span
               className="h-3 w-px bg-ivory/15"
               aria-hidden="true"
