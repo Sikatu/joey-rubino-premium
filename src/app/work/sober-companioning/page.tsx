@@ -92,7 +92,7 @@ export default function SoberCompanioningPage() {
           </div>
 
           <div className="mt-16 border-t border-ivory/10 pt-5 lg:mt-24">
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory/50 sm:text-[10px]">
+            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory/72 sm:text-[10px]">
               Recovery Support / Structure / Accountability
             </p>
           </div>

@@ -104,7 +104,7 @@ export default function FitnessPage() {
           </div>
 
           <div className="mt-16 border-t border-ivory/15 pt-5 lg:mt-24">
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory/65">
+            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory/72">
               Movement / Consistency / Personal Progress
             </p>
           </div>
