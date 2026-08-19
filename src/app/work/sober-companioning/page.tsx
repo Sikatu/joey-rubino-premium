@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/seo";
+import { createBreadcrumbJsonLd, serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -12,6 +13,21 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Real-world recovery support centered on presence, structure, accountability, and discretion with Joey Rubino.",
 });
+
+const breadcrumbJsonLd = createBreadcrumbJsonLd([
+  {
+    name: "Home",
+    item: "https://joeyrubinorehab.com/",
+  },
+  {
+    name: "Work",
+    item: "https://joeyrubinorehab.com/work",
+  },
+  {
+    name: "Sober Companioning",
+    item: "https://joeyrubinorehab.com/work/sober-companioning",
+  },
+]);
 
 const focusAreas = [
   {
@@ -43,6 +59,12 @@ const focusAreas = [
 export default function SoberCompanioningPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       <section className="relative overflow-hidden bg-ink pb-20 pt-40 text-ivory lg:pb-28 lg:pt-52">
         <Image
           src="/images/editorial/journey/tropical-palm-valley.webp"

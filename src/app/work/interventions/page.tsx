@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/seo";
+import { createBreadcrumbJsonLd, serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -12,6 +13,21 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "A compassionate and structured approach to difficult conversations around addiction, clarity, connection, and recovery.",
 });
+
+const breadcrumbJsonLd = createBreadcrumbJsonLd([
+  {
+    name: "Home",
+    item: "https://joeyrubinorehab.com/",
+  },
+  {
+    name: "Work",
+    item: "https://joeyrubinorehab.com/work",
+  },
+  {
+    name: "Interventions",
+    item: "https://joeyrubinorehab.com/work/interventions",
+  },
+]);
 
 const principles = [
   {
@@ -37,6 +53,12 @@ const principles = [
 export default function InterventionsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       <section className="relative overflow-hidden bg-ink pb-20 pt-40 text-ivory lg:pb-28 lg:pt-52">
         <div
           className="pointer-events-none absolute inset-0"

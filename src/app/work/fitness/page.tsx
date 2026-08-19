@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/seo";
+import { createBreadcrumbJsonLd, serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -12,6 +13,21 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Fitness coaching with Joey Rubino centered on movement, consistency, practical structure, and sustainable personal change.",
 });
+
+const breadcrumbJsonLd = createBreadcrumbJsonLd([
+  {
+    name: "Home",
+    item: "https://joeyrubinorehab.com/",
+  },
+  {
+    name: "Work",
+    item: "https://joeyrubinorehab.com/work",
+  },
+  {
+    name: "Fitness & Transformation",
+    item: "https://joeyrubinorehab.com/work/fitness",
+  },
+]);
 
 const focusAreas = [
   {
@@ -43,6 +59,12 @@ const focusAreas = [
 export default function FitnessPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       {/* 01 - HERO */}
       <section className="relative overflow-hidden bg-ink pb-20 pt-40 text-ivory lg:pb-28 lg:pt-52">
         <Image
