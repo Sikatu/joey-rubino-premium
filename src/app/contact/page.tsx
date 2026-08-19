@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/Button";
 import { RevealSection } from "@/lib/motion";
@@ -44,6 +44,35 @@ export default function ContactPage() {
   const [serverError, setServerError] = useState("");
   const [startedAt] = useState(() => Date.now());
 
+  const firstInvalidFieldRef =
+    useRef<keyof FormErrors | null>(null);
+
+  useEffect(() => {
+    const field =
+      firstInvalidFieldRef.current;
+
+    if (
+      !field ||
+      !errors[field]
+    ) {
+      return;
+    }
+
+    const element =
+      document.getElementById(
+        `contact-${field}`,
+      );
+
+    if (
+      element instanceof HTMLElement
+    ) {
+      element.focus();
+    }
+
+    firstInvalidFieldRef.current =
+      null;
+  }, [errors]);
+
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -79,9 +108,25 @@ export default function ContactPage() {
         "Message must be 5,000 characters or fewer";
     }
 
+    const firstInvalidField = (
+      [
+        "name",
+        "email",
+        "subject",
+        "message",
+      ] as const
+    ).find(
+      (field) =>
+        newErrors[field],
+    );
+
+    firstInvalidFieldRef.current =
+      firstInvalidField ??
+      null;
+
     setErrors(newErrors);
 
-    return Object.keys(newErrors).length === 0;
+    return !firstInvalidField;
   };
 
   const handleSubmit = async (
@@ -299,7 +344,7 @@ export default function ContactPage() {
                       {errors.name && (
                         <p
                           id="name-error"
-                          className="mt-1 text-[13px] text-red-600"
+                          className="mt-1 text-[13px] text-red-700"
                         >
                           {errors.name}
                         </p>
@@ -335,7 +380,7 @@ export default function ContactPage() {
                       {errors.email && (
                         <p
                           id="email-error"
-                          className="mt-1 text-[13px] text-red-600"
+                          className="mt-1 text-[13px] text-red-700"
                         >
                           {errors.email}
                         </p>
@@ -420,7 +465,7 @@ export default function ContactPage() {
                       {errors.subject && (
                         <p
                           id="subject-error"
-                          className="mt-1 text-[13px] text-red-600"
+                          className="mt-1 text-[13px] text-red-700"
                         >
                           {errors.subject}
                         </p>
@@ -455,7 +500,7 @@ export default function ContactPage() {
                       {errors.message && (
                         <p
                           id="message-error"
-                          className="mt-1 text-[13px] text-red-600"
+                          className="mt-1 text-[13px] text-red-700"
                         >
                           {errors.message}
                         </p>
