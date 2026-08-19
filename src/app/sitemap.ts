@@ -4,14 +4,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://joeyrubinorehab.com";
 
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/work`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/work/sober-companioning`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/work/fitness`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/work/interventions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/finding-meaning`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.9 },
-    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: baseUrl },
+    { url: `${baseUrl}/about` },
+    { url: `${baseUrl}/work` },
+    { url: `${baseUrl}/work/sober-companioning` },
+    { url: `${baseUrl}/work/fitness` },
+    { url: `${baseUrl}/work/interventions` },
+    { url: `${baseUrl}/finding-meaning` },
+    { url: `${baseUrl}/contact` },
+    { url: `${baseUrl}/faq` },
   ];
 }
