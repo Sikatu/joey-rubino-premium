@@ -538,7 +538,21 @@ export default function ContactPage() {
                       </div>
                     )}
 
-                    <Button
+                                        <p className="max-w-2xl font-sans text-[12px] leading-[1.75] text-body/65">
+                      Please share only what is needed for your inquiry. Avoid
+                      including medical records, financial account information,
+                      Social Security numbers, or other government identification
+                      numbers. By sending this form, you acknowledge that your
+                      submission will be handled as described in the{" "}
+                      <a
+                        href="/privacy"
+                        className="underline decoration-bronze/50 underline-offset-4 transition-colors hover:text-olive"
+                      >
+                        Privacy Notice
+                      </a>
+                      .
+                    </p>
+<Button
                       type="submit"
                       variant="primary"
                       disabled={status === "loading"}

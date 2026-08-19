@@ -173,9 +173,23 @@ export function Footer() {
             © {new Date().getFullYear()} Joey Rubino. All rights reserved.
           </p>
 
-          <p className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/50">
+                    <div className="flex items-center gap-4">
+            <Link
+              href="/privacy"
+              className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/55 transition-colors duration-300 hover:text-ivory"
+            >
+              Privacy
+            </Link>
+
+            <span
+              className="h-3 w-px bg-ivory/15"
+              aria-hidden="true"
+            />
+
+            <p className="font-sans text-[9px] tracking-[0.15em] uppercase text-ivory/50">
             Private. Personal. No pressure.
-          </p>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
