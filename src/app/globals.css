@@ -402,7 +402,7 @@ body {
 }
 
 .lux-button--primary {
-  --lux-fill: var(--color-bronze);
+  --lux-fill: var(--color-bronze-deep);
 
   border-color: var(--color-ink);
   background-color: var(--color-ink);
@@ -410,12 +410,12 @@ body {
 }
 
 .lux-button--primary:hover {
-  border-color: var(--color-bronze);
+  border-color: var(--color-bronze-deep);
   color: var(--color-ivory);
 }
 
 .lux-button--secondary {
-  --lux-fill: var(--color-bronze);
+  --lux-fill: var(--color-bronze-deep);
 
   border-color: var(--color-ivory);
   background-color: var(--color-ivory);
@@ -423,7 +423,7 @@ body {
 }
 
 .lux-button--secondary:hover {
-  border-color: var(--color-bronze);
+  border-color: var(--color-bronze-deep);
   color: var(--color-ivory);
 }
 
